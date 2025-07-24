@@ -33,7 +33,7 @@ export default function ChartVisualizerPage() {
         </div>
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left column: Configuration (1/3) */}
-          <div className="md:w-1/3 w-full bg-gray-50 p-4 rounded shadow min-h-[300px]">
+          <div className="md:w-1/3 w-full bg-accent/50 p-4 rounded shadow-sm">
             <h2 className="text-xl font-semibold mb-4">Configuration</h2>
             <form className="flex flex-col gap-4">
               {/* Chart Title */}
@@ -42,7 +42,7 @@ export default function ChartVisualizerPage() {
                 <Input
                   id="chart-title"
                   type="text"
-                  className="bg-white"
+                  className="bg-background"
                   placeholder="Enter chart title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}

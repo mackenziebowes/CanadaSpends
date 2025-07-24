@@ -1,5 +1,6 @@
 import { Label } from "@/components/label";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/tabs";
+import { Textarea } from "@/components/textarea";
 
 interface ChartTypesProps {
   dataTab: string;
@@ -22,7 +23,7 @@ export const ChartDataField = ({
     <div className="flex flex-col gap-2">
       <Label htmlFor="chart-type">Chart Data</Label>
       <Tabs value={dataTab} onValueChange={setDataTab} className="w-full">
-        <TabsList className="w-full mb-2">
+        <TabsList className="w-full mb-2 bg-muted">
           <TabsTrigger value="upload" className="flex-1">
             Upload File
           </TabsTrigger>
@@ -51,10 +52,10 @@ export const ChartDataField = ({
           <label htmlFor="data-text" className="block text-sm font-medium mb-1">
             Paste Data (CSV or JSON)
           </label>
-          <textarea
+          <Textarea
             id="data-text"
-            className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary min-h-[80px] resize-y"
             placeholder="Paste CSV or JSON data here"
+            className="bg-background"
             value={dataText}
             onChange={(e) => setDataText(e.target.value)}
           />
