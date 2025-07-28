@@ -4,8 +4,8 @@ import { H1, PageContent, Section } from "@/components/Layout";
 import { Button } from "@/components/button";
 import React, { useState } from "react";
 import { ChartDataField, ChartTypeField, ChartPreview } from "./_components";
-import { Input } from "@/components/input";
-import { Label } from "@/components/label";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { parseCSV } from "@/utils/csvUtils";
 import { Download, Share2 } from "lucide-react";
 // For now, import the sample data as a string (in a real app, use dynamic import or fetch)

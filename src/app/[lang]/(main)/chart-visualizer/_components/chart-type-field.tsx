@@ -1,6 +1,6 @@
-import { ToggleGroup, ToggleGroupItem } from "@/components/toggle-group";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { BarChart, LineChart, PieChart, ScatterChart } from "lucide-react";
-import { Label } from "@/components/label";
+import { Label } from "@/components/ui/label";
 
 const chartTypes = [
   { label: "Bar Chart", value: "bar", icon: BarChart },

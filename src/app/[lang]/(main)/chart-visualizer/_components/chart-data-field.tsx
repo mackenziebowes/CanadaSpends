@@ -1,7 +1,7 @@
-import { Input } from "@/components/input";
-import { Label } from "@/components/label";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/tabs";
-import { Textarea } from "@/components/textarea";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
 
 interface ChartTypesProps {
   dataTab: string;
@@ -49,7 +49,7 @@ export function ChartDataField({
           <Textarea
             id="data-text"
             placeholder="Paste CSV or JSON data here"
-            className="bg-background"
+            className="bg-background h-24 resize-none"
             value={dataText}
             onChange={(e) => setDataText(e.target.value)}
           />
