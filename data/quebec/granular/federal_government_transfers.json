@@ -1,0 +1,24 @@
+{
+  "name": "Federal Government Transfers",
+  "fiscal_year": "2023-2024",
+  "unit": "millions of dollars",
+  "categories": [
+    {
+      "name": "Equalization",
+      "amount": 14037
+    },
+    {
+      "name": "Health transfers",
+      "amount": 8714
+    },
+    {
+      "name": "Transfers for post-secondary education and other social programs",
+      "amount": 1451
+    },
+    {
+      "name": "Other programs",
+      "amount": 6674
+    }
+  ],
+  "total_actual_results": 30876
+}

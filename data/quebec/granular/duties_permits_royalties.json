@@ -1,0 +1,24 @@
+{
+  "name": "Duties, permits and royalties",
+  "fiscal_year": "2023-2024",
+  "unit": "millions of dollars",
+  "categories": [
+    {
+      "name": "Motor vehicles",
+      "amount": 1744
+    },
+    {
+      "name": "Natural resources",
+      "amount": 1594
+    },
+    {
+      "name": "Greenhouse gas emissions",
+      "amount": 1549
+    },
+    {
+      "name": "Other",
+      "amount": 1001
+    }
+  ],
+  "total_actual_results": 5888
+}

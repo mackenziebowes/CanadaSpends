@@ -46,7 +46,8 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
     pathname.startsWith(`/${i18n.locale}/spending`) ||
     pathname.startsWith(`/${i18n.locale}/budget`) ||
     pathname.startsWith("/ontario") ||
-    pathname.startsWith("/alberta");
+    pathname.startsWith("/alberta") ||
+    pathname.startsWith("/quebec");
 
   return (
     <>
@@ -119,6 +120,14 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
                         className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
                       >
                         <Trans>Alberta</Trans>
+                      </Link>
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item asChild>
+                      <Link
+                        href="/quebec"
+                        className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
+                      >
+                        <Trans>Quebec</Trans>
                       </Link>
                     </DropdownMenu.Item>
                   </DropdownMenu.Content>
@@ -244,6 +253,15 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
             >
               <span className="pl-4 inline-block">
                 <Trans>Alberta</Trans>
+              </span>
+            </MobileNavLink>
+            <MobileNavLink
+              href="/quebec"
+              active={pathname.startsWith("/quebec")}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <span className="pl-4 inline-block">
+                <Trans>Quebec</Trans>
               </span>
             </MobileNavLink>
             <MobileNavLink

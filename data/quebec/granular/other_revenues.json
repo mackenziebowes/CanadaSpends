@@ -1,0 +1,44 @@
+{
+  "name": "Other Revenues",
+  "fiscal_year": "2023-2024",
+  "unit": "millions of dollars",
+  "categories": [
+    {
+      "name": "Sales of goods and services",
+      "amount": 6354
+    },
+    {
+      "name": "Health and social services network user contributions",
+      "amount": 1667
+    },
+    {
+      "name": "Income on accounts receivable and loans",
+      "amount": 1784
+    },
+    {
+      "name": "Income on investments",
+      "amount": 829
+    },
+    {
+      "name": "Fines, forfeitures and recoveries",
+      "amount": 1232
+    },
+    {
+      "name": "Third-party donations",
+      "amount": 1004
+    },
+    {
+      "name": "Tuition fees",
+      "amount": 543
+    },
+    {
+      "name": "Transfers from entities other than the federal government",
+      "amount": 92
+    },
+    {
+      "name": "Duties, permits and royalties",
+      "amount": 5888
+    }
+  ],
+  "total_actual_results": 19393
+}

@@ -1,0 +1,689 @@
+{
+  "total": 151.535,
+  "spending": 151.535,
+  "revenue": 145.541,
+  "spending_data": {
+    "name": "Spending",
+    "children": [
+      {
+        "name": "Health and Social Services",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 8.524
+          },
+          {
+            "name": "Remuneration",
+            "amount": 37.626
+          },
+          {
+            "name": "Operating",
+            "amount": 14.713
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.137
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 1.362
+          },
+          {
+            "name": "Remuneration",
+            "amount": 14.236
+          },
+          {
+            "name": "Operating",
+            "amount": 4.449
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.011
+          }
+        ]
+      },
+      {
+        "name": "Higher Education",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 4.903
+          },
+          {
+            "name": "Remuneration",
+            "amount": 4.209
+          },
+          {
+            "name": "Operating",
+            "amount": 1.324
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.04
+          }
+        ]
+      },
+      {
+        "name": "Debt Service",
+        "amount": 9.982
+      },
+      {
+        "name": "National Assembly",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.0
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.128
+          },
+          {
+            "name": "Operating",
+            "amount": 0.053
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Persons designated by the National Assembly",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.013
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.092
+          },
+          {
+            "name": "Operating",
+            "amount": 0.03
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Municipal Affairs and Housing",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 4.547
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.132
+          },
+          {
+            "name": "Operating",
+            "amount": 0.157
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.078
+          }
+        ]
+      },
+      {
+        "name": "Agriculture, Fisheries and Food",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 1.154
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.223
+          },
+          {
+            "name": "Operating",
+            "amount": 0.098
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.027
+          }
+        ]
+      },
+      {
+        "name": "Treasury Board and Government Administration",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.053
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.733
+          },
+          {
+            "name": "Operating",
+            "amount": 0.255
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": -0.001
+          }
+        ]
+      },
+      {
+        "name": "Executive Council",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.743
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.144
+          },
+          {
+            "name": "Operating",
+            "amount": 0.029
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Culture and Communications",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 1.595
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.223
+          },
+          {
+            "name": "Operating",
+            "amount": 0.297
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.006
+          }
+        ]
+      },
+      {
+        "name": "Cybersecurity and Digital",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.0
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.083
+          },
+          {
+            "name": "Operating",
+            "amount": 0.122
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Economy, Innovation and Energy",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 3.238
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.093
+          },
+          {
+            "name": "Operating",
+            "amount": 0.217
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.282
+          }
+        ]
+      },
+      {
+        "name": "Employment and Social Solidarity",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 5.018
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.503
+          },
+          {
+            "name": "Operating",
+            "amount": 0.163
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.044
+          }
+        ]
+      },
+      {
+        "name": "Environment, Fight against Climate Change, Wildlife and Parks",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 1.726
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.337
+          },
+          {
+            "name": "Operating",
+            "amount": 0.364
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.004
+          }
+        ]
+      },
+      {
+        "name": "Family",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 8.68
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.134
+          },
+          {
+            "name": "Operating",
+            "amount": 0.103
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Finance",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 1.34
+          },
+          {
+            "name": "Remuneration",
+            "amount": 1.366
+          },
+          {
+            "name": "Operating",
+            "amount": 0.555
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.489
+          }
+        ]
+      },
+      {
+        "name": "Immigration, Francization and Integration",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.295
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.184
+          },
+          {
+            "name": "Operating",
+            "amount": 0.083
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Justice",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.433
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.857
+          },
+          {
+            "name": "Operating",
+            "amount": 0.597
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.016
+          }
+        ]
+      },
+      {
+        "name": "French Language",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.011
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.04
+          },
+          {
+            "name": "Operating",
+            "amount": 0.009
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "International Relations and La Francophonie",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.057
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.089
+          },
+          {
+            "name": "Operating",
+            "amount": 0.036
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Natural Resources and Forests",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.426
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.283
+          },
+          {
+            "name": "Operating",
+            "amount": 0.772
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.005
+          }
+        ]
+      },
+      {
+        "name": "Public Security",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.364
+          },
+          {
+            "name": "Remuneration",
+            "amount": 1.75
+          },
+          {
+            "name": "Operating",
+            "amount": 0.636
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Tourism",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.296
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.071
+          },
+          {
+            "name": "Operating",
+            "amount": 0.13
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      },
+      {
+        "name": "Transport and Sustainable Mobility",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 2.565
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.827
+          },
+          {
+            "name": "Operating",
+            "amount": 3.299
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.009
+          }
+        ]
+      },
+      {
+        "name": "Labour",
+        "children": [
+          {
+            "name": "Transfers",
+            "amount": 0.023
+          },
+          {
+            "name": "Remuneration",
+            "amount": 0.143
+          },
+          {
+            "name": "Operating",
+            "amount": 0.043
+          },
+          {
+            "name": "Doubtful accounts and other allowances",
+            "amount": 0.0
+          }
+        ]
+      }
+    ]
+  },
+  "revenue_data": {
+    "name": "Revenue",
+    "children": [
+      {
+        "name": "Income and Property Tax",
+        "children": [
+          {
+            "name": "Personal income tax",
+            "amount": 41.863
+          },
+          {
+            "name": "Contributions for health services",
+            "amount": 8.533
+          },
+          {
+            "name": "Corporate taxes",
+            "amount": 11.402
+          },
+          {
+            "name": "School property tax",
+            "amount": 1.15
+          }
+        ]
+      },
+      {
+        "name": "Consumption Taxes",
+        "children": [
+          {
+            "name": "Sales",
+            "amount": 23.306
+          },
+          {
+            "name": "Fuel",
+            "amount": 2.157
+          },
+          {
+            "name": "Tobacco",
+            "amount": 0.912
+          },
+          {
+            "name": "Alcoholic beverages",
+            "amount": 0.618
+          },
+          {
+            "name": "Other",
+            "amount": 0.09
+          }
+        ]
+      },
+      {
+        "name": "Federal Government Transfers",
+        "children": [
+          {
+            "name": "Equalization",
+            "amount": 14.037
+          },
+          {
+            "name": "Health transfers",
+            "amount": 8.714
+          },
+          {
+            "name": "Transfers for post-secondary education and other social programs",
+            "amount": 1.451
+          },
+          {
+            "name": "Other programs",
+            "amount": 6.674
+          }
+        ]
+      },
+      {
+        "name": "Government Enterprises",
+        "children": [
+          {
+            "name": "Hydro-Québec",
+            "amount": 2.027
+          },
+          {
+            "name": "Société des alcools du Québec",
+            "amount": 1.428
+          },
+          {
+            "name": "Loto-Québec",
+            "amount": 1.508
+          },
+          {
+            "name": "Investissement Québec",
+            "amount": 0.121
+          },
+          {
+            "name": "Other",
+            "amount": 0.157
+          }
+        ]
+      },
+      {
+        "name": "Other Revenues",
+        "children": [
+          {
+            "name": "Sales of goods and services",
+            "amount": 6.354
+          },
+          {
+            "name": "Health and social services network user contributions",
+            "amount": 1.667
+          },
+          {
+            "name": "Income on accounts receivable and loans",
+            "amount": 1.784
+          },
+          {
+            "name": "Income on investments",
+            "amount": 0.829
+          },
+          {
+            "name": "Fines, forfeitures and recoveries",
+            "amount": 1.232
+          },
+          {
+            "name": "Third-party donations",
+            "amount": 1.004
+          },
+          {
+            "name": "Tuition fees",
+            "amount": 0.543
+          },
+          {
+            "name": "Transfers from entities other than the federal government",
+            "amount": 0.092
+          },
+          {
+            "name": "Motor vehicles duties, permits and royalties",
+            "amount": 1.744
+          },
+          {
+            "name": "Natural resources duties, permits and royalties",
+            "amount": 1.594
+          },
+          {
+            "name": "Greenhouse gas emissions duties, permits and royalties",
+            "amount": 1.549
+          },
+          {
+            "name": "Other duties, permits and royalties",
+            "amount": 1.001
+          }
+        ]
+      }
+    ]
+  }
+}

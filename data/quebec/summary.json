@@ -1,0 +1,12 @@
+{
+  "name": "Quebec",
+  "financialYear": "2023-24",
+  "source": "https://www.quebec.ca/en/government/ministries-and-organisms/budget-and-finance",
+  "totalProvincialSpending": 0,
+  "totalProvincialSpendingFormatted": "$0B",
+  "totalEmployees": 0,
+  "netDebt": 0,
+  "totalDebt": 0,
+  "debtInterest": 0,
+  "ministries": []
+}

@@ -149,13 +149,13 @@ msgstr "A look at how Veterans Affairs Canada spends its budget"
 msgid "A significant portion of GAC's budget supports Canada's international development assistance, with key programs focused on climate adaptation, gender equality, and health initiatives in developing nations. The department also facilitates economic diplomacy and trade agreements that benefit Canadian businesses and secure investment opportunities abroad."
 msgstr "A significant portion of GAC's budget supports Canada's international development assistance, with key programs focused on climate adaptation, gender equality, and health initiatives in developing nations. The department also facilitates economic diplomacy and trade agreements that benefit Canadian businesses and secure investment opportunities abroad."
 
-#: src/components/MainLayout/index.tsx:148
-#: src/components/MainLayout/index.tsx:268
+#: src/components/MainLayout/index.tsx:157
+#: src/components/MainLayout/index.tsx:286
 msgid "About"
 msgstr "About"
 
 #: src/components/MainLayout/Footer.tsx:26
-#: src/components/MainLayout/index.tsx:162
+#: src/components/MainLayout/index.tsx:171
 msgid "About Us"
 msgstr "About Us"
 
@@ -214,8 +214,8 @@ msgstr "Agriculture"
 msgid "Air Travellers Charge"
 msgstr "Air Travellers Charge"
 
-#: src/components/MainLayout/index.tsx:121
-#: src/components/MainLayout/index.tsx:246
+#: src/components/MainLayout/index.tsx:122
+#: src/components/MainLayout/index.tsx:255
 msgid "Alberta"
 msgstr "Alberta"
 
@@ -319,7 +319,7 @@ msgstr "British Columbia HTP"
 msgid "British Columbia STP"
 msgstr "British Columbia STP"
 
-#: src/components/MainLayout/index.tsx:229
+#: src/components/MainLayout/index.tsx:238
 msgid "Budget"
 msgstr "Budget"
 
@@ -466,8 +466,8 @@ msgid "Connect with us"
 msgstr "Connect with us"
 
 #: src/components/MainLayout/Footer.tsx:43
-#: src/components/MainLayout/index.tsx:179
-#: src/components/MainLayout/index.tsx:275
+#: src/components/MainLayout/index.tsx:188
+#: src/components/MainLayout/index.tsx:293
 msgid "Contact"
 msgstr "Contact"
 
@@ -845,12 +845,12 @@ msgstr "External Revenues"
 msgid "Facts about Spending"
 msgstr "Facts about Spending"
 
-#: src/components/MainLayout/index.tsx:105
+#: src/components/MainLayout/index.tsx:106
 msgid "Fall 2025 Budget"
 msgstr "Fall 2025 Budget"
 
-#: src/components/MainLayout/index.tsx:97
-#: src/components/MainLayout/index.tsx:220
+#: src/components/MainLayout/index.tsx:98
+#: src/components/MainLayout/index.tsx:229
 msgid "Federal"
 msgstr "Federal"
 
@@ -1075,7 +1075,7 @@ msgid "Get data-driven insights into how governmental revenue and spending affec
 msgstr "Get data-driven insights into how governmental revenue and spending affect Canadian lives and programs."
 
 #: src/components/MainLayout/Footer.tsx:35
-#: src/components/MainLayout/index.tsx:171
+#: src/components/MainLayout/index.tsx:180
 msgid "Get Involved"
 msgstr "Get Involved"
 
@@ -1137,8 +1137,8 @@ msgid "Government IT Operations"
 msgstr "Government IT Operations"
 
 #: src/app/[lang]/(main)/spending/page.tsx:110
-#: src/components/MainLayout/index.tsx:83
-#: src/components/MainLayout/index.tsx:212
+#: src/components/MainLayout/index.tsx:84
+#: src/components/MainLayout/index.tsx:221
 msgid "Government Spending"
 msgstr "Government Spending"
 
@@ -1926,8 +1926,8 @@ msgid "On-reserve Income Support in Yukon Territory"
 msgstr "On-reserve Income Support in Yukon Territory"
 
 #: src/app/[lang]/(main)/tax-visualizer/page.tsx:67
-#: src/components/MainLayout/index.tsx:113
-#: src/components/MainLayout/index.tsx:238
+#: src/components/MainLayout/index.tsx:114
+#: src/components/MainLayout/index.tsx:247
 msgid "Ontario"
 msgstr "Ontario"
 
@@ -2286,6 +2286,11 @@ msgstr "Public Services and Procurement Canada | Canada Spends"
 msgid "Public Works + Government Services"
 msgstr "Public Works + Government Services"
 
+#: src/components/MainLayout/index.tsx:130
+#: src/components/MainLayout/index.tsx:264
+msgid "Quebec"
+msgstr "Quebec"
+
 #: src/app/[lang]/(main)/spending/department-of-finance/MiniSankey.tsx:31
 msgid "Quebec abatement"
 msgstr "Quebec abatement"
@@ -2498,8 +2503,8 @@ msgstr "Space"
 msgid "Spending"
 msgstr "Spending"
 
-#: src/components/MainLayout/index.tsx:137
-#: src/components/MainLayout/index.tsx:261
+#: src/components/MainLayout/index.tsx:146
+#: src/components/MainLayout/index.tsx:279
 msgid "Spending Database"
 msgstr "Spending Database"
 
@@ -2562,11 +2567,11 @@ msgstr "Support for Veterans"
 msgid "Sustainable Bases, IT Systems, Infrastructure"
 msgstr "Sustainable Bases, IT Systems, Infrastructure"
 
-#: src/components/MainLayout/index.tsx:254
+#: src/components/MainLayout/index.tsx:272
 msgid "Tax Calculator"
 msgstr "Tax Calculator"
 
-#: src/components/MainLayout/index.tsx:131
+#: src/components/MainLayout/index.tsx:140
 msgid "Tax Visualizer"
 msgstr "Tax Visualizer"
 

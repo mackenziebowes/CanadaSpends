@@ -1,0 +1,28 @@
+{
+  "name": "Government Enterprises",
+  "fiscal_year": "2023-2024",
+  "unit": "millions of dollars",
+  "categories": [
+    {
+      "name": "Hydro-Québec",
+      "amount": 2027
+    },
+    {
+      "name": "Société des alcools du Québec",
+      "amount": 1428
+    },
+    {
+      "name": "Loto-Québec",
+      "amount": 1508
+    },
+    {
+      "name": "Investissement Québec",
+      "amount": 121
+    },
+    {
+      "name": "Other",
+      "amount": 157
+    }
+  ],
+  "total_actual_results": 5241
+}

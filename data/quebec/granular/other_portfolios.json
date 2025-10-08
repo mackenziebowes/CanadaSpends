@@ -1,0 +1,96 @@
+{
+  "name": "Other Portfolios",
+  "fiscal_year": "2023-2024",
+  "unit": "millions of dollars",
+  "categories": [
+    {
+      "name": "National Assembly",
+      "amount": 181
+    },
+    {
+      "name": "Persons designated by the National Assembly",
+      "amount": 135
+    },
+    {
+      "name": "Municipal Affairs and Housing",
+      "amount": 4914
+    },
+    {
+      "name": "Agriculture, Fisheries and Food",
+      "amount": 1502
+    },
+    {
+      "name": "Treasury Board and Government Administration",
+      "amount": 1040
+    },
+    {
+      "name": "Executive Council",
+      "amount": 916
+    },
+    {
+      "name": "Culture and Communications",
+      "amount": 2121
+    },
+    {
+      "name": "Cybersecurity and Digital",
+      "amount": 205
+    },
+    {
+      "name": "Economy, Innovation and Energy",
+      "amount": 3830
+    },
+    {
+      "name": "Employment and Social Solidarity",
+      "amount": 5728
+    },
+    {
+      "name": "Environment, Fight against Climate Change, Wildlife and Parks",
+      "amount": 2431
+    },
+    {
+      "name": "Family",
+      "amount": 8917
+    },
+    {
+      "name": "Finance",
+      "amount": 3750
+    },
+    {
+      "name": "Immigration, Francization and Integration",
+      "amount": 562
+    },
+    {
+      "name": "Justice",
+      "amount": 1903
+    },
+    {
+      "name": "French Language",
+      "amount": 60
+    },
+    {
+      "name": "International Relations and La Francophonie",
+      "amount": 182
+    },
+    {
+      "name": "Natural Resources and Forests",
+      "amount": 1486
+    },
+    {
+      "name": "Public Security",
+      "amount": 2750
+    },
+    {
+      "name": "Tourism",
+      "amount": 497
+    },
+    {
+      "name": "Transport and Sustainable Mobility",
+      "amount": 6700
+    },
+    {
+      "name": "Labour",
+      "amount": 209
+    }
+  ],
+  "total_actual_results": 50019
+}

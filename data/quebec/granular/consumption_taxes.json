@@ -1,0 +1,28 @@
+{
+  "name": "Consumption Taxes",
+  "fiscal_year": "2023-2024",
+  "unit": "millions of dollars",
+  "categories": [
+    {
+      "name": "Sales",
+      "amount": 23306
+    },
+    {
+      "name": "Fuel",
+      "amount": 2157
+    },
+    {
+      "name": "Tobacco",
+      "amount": 912
+    },
+    {
+      "name": "Alcoholic beverages",
+      "amount": 618
+    },
+    {
+      "name": "Other",
+      "amount": 90
+    }
+  ],
+  "total_actual_results": 27083
+}

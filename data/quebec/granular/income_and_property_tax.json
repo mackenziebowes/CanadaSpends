@@ -1,0 +1,24 @@
+{
+  "name": "Income and Property Tax",
+  "fiscal_year": "2023-2024",
+  "unit": "millions of dollars",
+  "categories": [
+    {
+      "name": "Personal income tax",
+      "amount": 41863
+    },
+    {
+      "name": "Contributions for health services",
+      "amount": 8533
+    },
+    {
+      "name": "Corporate taxes",
+      "amount": 11402
+    },
+    {
+      "name": "School property tax",
+      "amount": 1150
+    }
+  ],
+  "total_actual_results": 62948
+}
