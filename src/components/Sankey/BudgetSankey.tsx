@@ -344,268 +344,24 @@ export function BudgetSankey({ onDataChange }: BudgetSankeyProps = {}) {
       name: t`Spending`,
       children: [
         {
-          name: t`Economy and Standard of Living`,
-          children: [
-            {
-              name: t`Standard of Living`,
-              children: [
-                {
-                  name: t`Health`,
-                  children: [
-                    {
-                      name: t`Health Research`,
-                      amount2024: 1.35,
-                      amount2025: 1.35,
-                    },
-                    {
-                      name: t`Health Care Systems + Protection`,
-                      amount2024: 6.85,
-                      amount2025: 6.85,
-                    },
-                    {
-                      name: t`Food Safety`,
-                      amount2024: 1.08,
-                      amount2025: 1.08,
-                    },
-                    {
-                      name: t`Public Health + Disease Prevention`,
-                      amount2024: 4.43,
-                      amount2025: 4.43,
-                    },
-                  ],
-                },
-                {
-                  name: t`Standard of Living`,
-                  children: [
-                    {
-                      name: t`Revenue Canada`,
-                      amount2024: 6.94,
-                      amount2025: 6.94,
-                    },
-                    {
-                      name: t`Employment + Training`,
-                      amount2024: 28.26,
-                      amount2025: 28.26,
-                    },
-                    {
-                      name: t`Housing Assistance`,
-                      amount2024: 5.43,
-                      amount2025: 5.43,
-                    },
-                    {
-                      name: t`Gender Equality`,
-                      amount2024: 0.32,
-                      amount2025: 0.32,
-                    },
-                    {
-                      name: t`Official Languages + Culture`,
-                      amount2024: 4.78,
-                      amount2025: 4.78,
-                    },
-                    {
-                      name: t`Support for Veterans`,
-                      amount2024: 6.07,
-                      amount2025: 6.07,
-                      kind: "program" as SpendingKind,
-                    },
-                    {
-                      name: t`Carbon Tax Rebate`,
-                      amount2024: 9.86,
-                      amount2025: 0,
-                      kind: "other" as SpendingKind,
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: t`Economy + Infrastructure`,
-              children: [
-                {
-                  name: t`Innovation + Research`,
-                  children: [
-                    {
-                      name: t`Investment, Growth and Commercialization`,
-                      amount2024: 4.35,
-                      amount2025: 4.35,
-                    },
-                    {
-                      name: t`Research`,
-                      amount2024: 4.11,
-                      amount2025: 4.11,
-                    },
-                    {
-                      name: t`Statistics Canada`,
-                      amount2024: 0.74,
-                      amount2025: 0.74,
-                    },
-                    {
-                      name: t`Other Boards + Councils`,
-                      amount2024: 0.18,
-                      amount2025: 0.18,
-                    },
-                  ],
-                },
-                {
-                  name: t`Community and Regional Development`,
-                  children: [
-                    {
-                      name: t`Economic Development in Southern Ontario`,
-                      amount2024: 0.46,
-                      amount2025: 0.46,
-                    },
-                    {
-                      name: t`Economic Development in Atlantic Canada`,
-                      amount2024: 0.39,
-                      amount2025: 0.39,
-                    },
-                    {
-                      name: t`Economic Development in the Pacific Region`,
-                      amount2024: 0.19,
-                      amount2025: 0.19,
-                    },
-                    {
-                      name: t`Western + Northern Economic Development`,
-                      amount2024: 1.09,
-                      amount2025: 1.09,
-                    },
-                    {
-                      name: t`Economic Development in Northern Ontario`,
-                      amount2024: 0.07,
-                      amount2025: 0.07,
-                    },
-                    {
-                      name: t`Economic Development in Quebec`,
-                      amount2024: 0.39,
-                      amount2025: 0.39,
-                    },
-                  ],
-                },
-                {
-                  name: t`Fisheries`,
-                  children: [
-                    {
-                      name: t`Coastguard Operations`,
-                      amount2024: 1.8,
-                      amount2025: 1.8,
-                    },
-                    {
-                      name: t`Fisheries + Aquatic Ecosystems`,
-                      amount2024: 1.78,
-                      amount2025: 1.78,
-                    },
-                    {
-                      name: t`Other Fisheries Expenses`,
-                      amount2024: 0.97,
-                      amount2025: 0.97,
-                    },
-                  ],
-                },
-                {
-                  name: t`Agriculture`,
-                  amount2024: 4.19,
-                  amount2025: 4.19,
-                },
-                {
-                  name: t`Space`,
-                  amount2024: 0.45,
-                  amount2025: 0.45,
-                },
-                {
-                  name: t`Banking + Finance`,
-                  amount2024: 0.23,
-                  amount2025: 0.23,
-                },
-                {
-                  name: t`Environment and Climate Change`,
-                  children: [
-                    {
-                      name: t`Other Environment and Climate Change Programs`,
-                      amount2024: 1.46,
-                      amount2025: 1.46,
-                    },
-                    {
-                      name: t`Weather Services`,
-                      amount2024: 0.28,
-                      amount2025: 0.28,
-                    },
-                    {
-                      name: t`Nature Conservation`,
-                      amount2024: 0.72,
-                      amount2025: 0.72,
-                    },
-                    {
-                      name: t`National Parks`,
-                      amount2024: 1.45,
-                      amount2025: 1.45,
-                    },
-                  ],
-                },
-                {
-                  name: t`Natural Resources Management`,
-                  children: [
-                    {
-                      name: t`Innovative and Sustainable Natural Resources Development`,
-                      amount2024: 1.911,
-                      amount2025: 1.911,
-                    },
-                    {
-                      name: t`Support for Global Competition`,
-                      amount2024: 0.874,
-                      amount2025: 0.874,
-                    },
-                    {
-                      name: t`Nuclear Labs + Decommissioning`,
-                      amount2024: 1.514,
-                      amount2025: 1.514,
-                    },
-                    {
-                      name: t`Natural Resources Science + Risk Mitigation`,
-                      amount2024: 0.452,
-                      amount2025: 0.452,
-                    },
-                    {
-                      name: t`Other Natural Resources Management Support`,
-                      amount2024: 0.344,
-                      amount2025: 0.344,
-                    },
-                  ],
-                },
-                {
-                  name: t`Infrastructure Investments`,
-                  amount2024: 9.02,
-                  amount2025: 9.02,
-                  capitalShare: 1.0,
-                  kind: "program" as SpendingKind,
-                },
-                {
-                  name: t`Transportation`,
-                  amount2024: 5.31,
-                  amount2025: 5.31,
-                },
-              ],
-            },
-          ],
-        },
-        {
           name: t`Social Security`,
           children: [
             {
               name: t`Retirement Benefits`,
               amount2024: 76.03,
-              amount2025: 76.03,
+              amount2025: 83.1,
               kind: "transfer" as SpendingKind,
             },
             {
               name: t`Employment Insurance`,
               amount2024: 23.13,
-              amount2025: 23.13,
+              amount2025: 30.5,
               kind: "transfer" as SpendingKind,
             },
             {
               name: t`Children's Benefits`,
               amount2024: 26.34,
-              amount2025: 26.55,
+              amount2025: 30.1,
               kind: "transfer" as SpendingKind,
             },
             {
@@ -613,181 +369,6 @@ export function BudgetSankey({ onDataChange }: BudgetSankeyProps = {}) {
               amount2024: -4.84,
               amount2025: 0,
               kind: "transfer" as SpendingKind,
-            },
-            {
-              name: t`Canada Emergency Wage Subsidy`,
-              amount2024: -0.42,
-              amount2025: 0,
-              kind: "transfer" as SpendingKind,
-            },
-          ],
-        },
-        {
-          name: t`New Spending`,
-          children: [
-            {
-              name: t`Strategic Response Fund`,
-              amount2024: 0,
-              amount2025: 5,
-              capitalShare: 1.0,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Regional Tariff Response Initiative`,
-              amount2024: 0,
-              amount2025: 1,
-              capitalShare: 1.0,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Biofuel Production Incentive`,
-              amount2024: 0,
-              amount2025: 0.37,
-              capitalShare: 1.0,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Build Canada Homes`,
-              amount2024: 0,
-              amount2025: 13,
-              capitalShare: 1.0,
-              kind: "program" as SpendingKind,
-            },
-          ],
-        },
-        {
-          name: t`Safety`,
-          children: [
-            {
-              name: t`Public Safety`,
-              children: [
-                {
-                  name: t`CSIS`,
-                  amount2024: 0.83,
-                  amount2025: 0.83,
-                },
-                {
-                  name: t`Corrections`,
-                  amount2024: 3.374,
-                  amount2025: 3.374,
-                },
-                {
-                  name: t`RCMP`,
-                  amount2024: 5.14,
-                  amount2025: 5.14,
-                },
-                {
-                  name: t`Disaster Relief`,
-                  amount2024: 0.52,
-                  amount2025: 0.52,
-                },
-                {
-                  name: t`Community Safety`,
-                  amount2024: 0.839,
-                  amount2025: 0.839,
-                },
-                {
-                  name: t`Office of the Chief Electoral Officer`,
-                  amount2024: 0.249,
-                  amount2025: 0.249,
-                },
-                {
-                  name: t`Other Public Safety Expenses`,
-                  amount2024: 0.269,
-                  amount2025: 0.269,
-                },
-                {
-                  name: t`Justice System`,
-                  amount2024: 2.442,
-                  amount2025: 2.442,
-                },
-              ],
-            },
-            {
-              name: t`Immigration + Border Security`,
-              children: [
-                {
-                  name: t`Border Security`,
-                  amount2024: 2.69,
-                  amount2025: 2.82,
-                },
-                {
-                  name: t`Other Immigration Services`,
-                  amount2024: 3.389,
-                  amount2025: 3.389,
-                },
-                {
-                  name: t`Settlement Assistance`,
-                  amount2024: 1.926,
-                  amount2025: 1.926,
-                },
-                {
-                  name: t`Interim Housing Assistance`,
-                  amount2024: 0.26,
-                  amount2025: 0.26,
-                },
-                {
-                  name: t`Visitors, International Students + Temporary Workers`,
-                  amount2024: 0.52,
-                  amount2025: 0.52,
-                },
-                {
-                  name: t`Citizenship + Passports`,
-                  amount2024: 0.24,
-                  amount2025: 0.24,
-                },
-              ],
-            },
-          ],
-        },
-        {
-          name: t`Other`,
-          children: [
-            {
-              name: t`Public Works + Government Services`,
-              children: [
-                {
-                  name: t`Other Public Services + Procurement`,
-                  amount2024: 5.388,
-                  amount2025: 5.388,
-                },
-                {
-                  name: t`Government IT Operations`,
-                  amount2024: 2.7,
-                  amount2025: 2.7,
-                },
-              ],
-            },
-            {
-              name: t`Functioning of Government`,
-              children: [
-                {
-                  name: t`Parliament`,
-                  amount2024: 0.93,
-                  amount2025: 0.93,
-                },
-                {
-                  name: t`Privy Council Office`,
-                  amount2024: 0.347,
-                  amount2025: 0.347,
-                },
-                {
-                  name: t`Treasury Board`,
-                  amount2024: 4.954,
-                  amount2025: 4.954,
-                },
-                {
-                  name: t`Office of the Secretary to the Governor General`,
-                  amount2024: 0.026,
-                  amount2025: 0.026,
-                },
-              ],
-            },
-            {
-              name: t`Net actuarial losses`,
-              amount2024: -7.49,
-              amount2025: -7.49,
-              kind: "other" as SpendingKind,
             },
           ],
         },
@@ -797,464 +378,76 @@ export function BudgetSankey({ onDataChange }: BudgetSankeyProps = {}) {
           children: [
             {
               name: t`Health Transfer to Provinces`,
-              children: [
-                {
-                  name: t`Newfoundland and Labrador HTP`,
-                  amount2024: 0.666,
-                  amount2025: 0.666,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Prince Edward Island HTP`,
-                  amount2024: 0.214,
-                  amount2025: 0.214,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Nova Scotia HTP`,
-                  amount2024: 1.303,
-                  amount2025: 1.303,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`New Brunswick HTP`,
-                  amount2024: 1.027,
-                  amount2025: 1.027,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Quebec HTP`,
-                  amount2024: 10.911,
-                  amount2025: 10.911,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Ontario HTP`,
-                  amount2024: 19.266,
-                  amount2025: 19.266,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Manitoba HTP`,
-                  amount2024: 1.794,
-                  amount2025: 1.794,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Saskatchewan HTP`,
-                  amount2024: 1.491,
-                  amount2025: 1.491,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Alberta HTP`,
-                  amount2024: 5.771,
-                  amount2025: 5.771,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`British Columbia HTP`,
-                  amount2024: 6.817,
-                  amount2025: 6.817,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Yukon HTP`,
-                  amount2024: 0.056,
-                  amount2025: 0.056,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Northwest Territories HTP`,
-                  amount2024: 0.055,
-                  amount2025: 0.055,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Nunavut HTP`,
-                  amount2024: 0.05,
-                  amount2025: 0.05,
-                  kind: "transfer" as SpendingKind,
-                },
-              ],
+              amount2024: 49.42,
+              amount2025: 54.7,
             },
             {
               name: t`Social Transfer to Provinces`,
-              children: [
-                {
-                  name: t`Newfoundland and Labrador STP`,
-                  amount2024: 0.221,
-                  amount2025: 0.221,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Prince Edward Island STP`,
-                  amount2024: 0.071,
-                  amount2025: 0.071,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Nova Scotia STP`,
-                  amount2024: 0.433,
-                  amount2025: 0.433,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`New Brunswick STP`,
-                  amount2024: 0.341,
-                  amount2025: 0.341,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Quebec STP`,
-                  amount2024: 3.624,
-                  amount2025: 3.624,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Ontario STP`,
-                  amount2024: 6.4,
-                  amount2025: 6.4,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Manitoba STP`,
-                  amount2024: 0.596,
-                  amount2025: 0.596,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Saskatchewan STP`,
-                  amount2024: 0.495,
-                  amount2025: 0.495,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Alberta STP`,
-                  amount2024: 1.917,
-                  amount2025: 1.917,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`British Columbia STP`,
-                  amount2024: 2.264,
-                  amount2025: 2.264,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Yukon STP`,
-                  amount2024: 0.019,
-                  amount2025: 0.019,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Northwest Territories STP`,
-                  amount2024: 0.018,
-                  amount2025: 0.018,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Nunavut STP`,
-                  amount2024: 0.017,
-                  amount2025: 0.017,
-                  kind: "transfer" as SpendingKind,
-                },
-              ],
+              amount2024: 16.42,
+              amount2025: 17.4,
             },
             {
               name: t`Equalization Payments to Provinces`,
-              children: [
-                {
-                  name: t`Newfoundland and Labrador EQP`,
-                  amount2024: 0,
-                  amount2025: 0,
-                },
-                {
-                  name: t`Prince Edward Island EQP`,
-                  amount2024: 0.561,
-                  amount2025: 0.561,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Nova Scotia EQP`,
-                  amount2024: 2.803,
-                  amount2025: 2.803,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`New Brunswick EQP`,
-                  amount2024: 2.631,
-                  amount2025: 2.631,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Quebec EQP`,
-                  amount2024: 14.037,
-                  amount2025: 14.037,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Ontario EQP`,
-                  amount2024: 0.421,
-                  amount2025: 0.421,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Manitoba EQP`,
-                  amount2024: 3.51,
-                  amount2025: 3.51,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Saskatchewan EQP`,
-                  amount2024: 0,
-                  amount2025: 0,
-                },
-                {
-                  name: t`Alberta EQP`,
-                  amount2024: 0,
-                  amount2025: 0,
-                },
-                {
-                  name: t`British Columbia EQP`,
-                  amount2024: 0,
-                  amount2025: 0,
-                },
-                {
-                  name: t`Yukon EQP`,
-                  amount2024: 0,
-                  amount2025: 0,
-                },
-                {
-                  name: t`Northwest Territories EQP`,
-                  amount2024: 0,
-                  amount2025: 0,
-                },
-                {
-                  name: t`Nunavut EQP`,
-                  amount2024: 0,
-                  amount2025: 0,
-                },
-              ],
+              amount2024: 23.963,
+              amount2025: 26.2,
             },
             {
-              name: t`Quebec Tax Offset`,
-              amount2024: -7.1,
-              amount2025: -7.1,
-              kind: "transfer" as SpendingKind,
+              name: t`Territorial Formula Financing`,
+              amount2024: 4.8,
+              amount2025: 5.5,
             },
             {
-              name: t`Other Major Transfers`,
-              amount2024: 17.6,
-              amount2025: 17.6,
-              kind: "transfer" as SpendingKind,
+              name: t`Health agreements with provinces and territories`,
+              amount2024: 4.3,
+              amount2025: 4.3,
+            },
+            {
+              name: t`Canada-wide early learning and child care`,
+              amount2024: 5.6,
+              amount2025: 7.9,
+            },
+            {
+              name: t`Canada Community-Building Fund`,
+              amount2024: 2.4,
+              amount2025: 2.5,
+            },
+            {
+              name: t`Other fiscal arrangements`,
+              amount2024: -6.7,
+              amount2025: -7.6,
             },
           ],
         },
         {
-          name: t`Obligations`,
+          name: t`Pollution pricing`,
+          amount2024: 9.9,
+          amount2025: 5.0,
+        },
+        {
+          name: t`Public Debt Charges`,
+          amount2024: 47.27,
+          amount2025: 55.6,
+          kind: "debt" as SpendingKind,
+        },
+        {
+          name: t`Direct program expenses`,
           children: [
             {
-              name: t`Net Interest on Debt`,
-              amount2024: 47.27,
-              amount2025: 47.27,
-              kind: "debt" as SpendingKind,
+              name: t`Other transfer payments`,
+              amount2024: 107.1,
+              amount2025: 115.6,
+            },
+            {
+              name: t`Other direct program expenses`,
+              amount2024: 130.5,
+              amount2025: 150.2,
             },
           ],
         },
         {
-          name: t`Defence`,
-          children: [
-            {
-              name: t`Ready Forces`,
-              amount2024: 13.368,
-              amount2025: 16.368,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Defence Procurement`,
-              amount2024: 4.93,
-              amount2025: 7.93,
-              capitalShare: 1.0,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Sustainable Bases, IT Systems, Infrastructure`,
-              amount2024: 4.913,
-              amount2025: 4.913,
-              capitalShare: 1.0,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Defence Team`,
-              amount2024: 5.39,
-              amount2025: 8.09,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Future Force Design`,
-              amount2024: 1.472,
-              amount2025: 1.472,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Defence Operations + Internal Services`,
-              amount2024: 3.39,
-              amount2025: 3.39,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Communications Security Establishment`,
-              amount2024: 1.01,
-              amount2025: 1.01,
-              kind: "program" as SpendingKind,
-            },
-            {
-              name: t`Other Defence`,
-              amount2024: 0.01,
-              amount2025: 0.01,
-              kind: "program" as SpendingKind,
-            },
-          ],
-        },
-        {
-          name: t`Indigenous Priorities`,
-          children: [
-            {
-              name: t`Indigenous Well-Being + Self Determination`,
-              children: [
-                {
-                  name: t`Grants to Support the New Fiscal Relationship with First Nations`,
-                  amount2024: 1.36,
-                  amount2025: 1.36,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Community Infrastructure Grants`,
-                  amount2024: 3.31,
-                  amount2025: 3.31,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`First Nations Elementary and Secondary Educational Advancement`,
-                  amount2024: 2.56,
-                  amount2025: 2.56,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`On-reserve Income Support in Yukon Territory`,
-                  amount2024: 1.4,
-                  amount2025: 1.4,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`First Nations and Inuit Health Infrastructure Support`,
-                  amount2024: 1.22,
-                  amount2025: 1.22,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Emergency Management Activities On-Reserve`,
-                  amount2024: 0.59,
-                  amount2025: 0.59,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Prevention and Protection Services for Children, Youth, Families and Communities`,
-                  amount2024: 3.57,
-                  amount2025: 3.57,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`First Nations and Inuit Primary Health Care`,
-                  amount2024: 3.03,
-                  amount2025: 3.03,
-                  kind: "transfer" as SpendingKind,
-                },
-                {
-                  name: t`Other Support for Indigenous Well-Being`,
-                  amount2024: 9.45,
-                  amount2025: 9.45,
-                  kind: "transfer" as SpendingKind,
-                },
-              ],
-            },
-            {
-              name: t`Crown-Indigenous Relations`,
-              children: [
-                {
-                  name: t`Claims Settlements`,
-                  children: [
-                    {
-                      name: t`Out of Court Settlement`,
-                      amount2024: 5.0,
-                      amount2025: 0,
-                      kind: "other" as SpendingKind,
-                    },
-                    {
-                      name: t`Gottfriedson Band Class Settlement`,
-                      amount2024: 2.82,
-                      amount2025: 0,
-                      kind: "other" as SpendingKind,
-                    },
-                    {
-                      name: t`Childhood Claims Settlement`,
-                      amount2024: 1.42,
-                      amount2025: 0,
-                      kind: "other" as SpendingKind,
-                    },
-                    {
-                      name: t`Other Settlement Agreements`,
-                      amount2024: 0.85,
-                      amount2025: 0,
-                      kind: "other" as SpendingKind,
-                    },
-                  ],
-                },
-                {
-                  name: t`Other Grants and Contributions to Support Crown-Indigenous Relations`,
-                  amount2024: 6.26,
-                  amount2025: 6.26,
-                  kind: "other" as SpendingKind,
-                },
-              ],
-            },
-          ],
-        },
-        {
-          name: t`International Affairs`,
-          children: [
-            {
-              name: t`Development, Peace + Security Programming`,
-              amount2024: 5.37,
-              amount2025: 5.37,
-            },
-            {
-              name: t`International Diplomacy`,
-              amount2024: 1.0,
-              amount2025: 1.0,
-            },
-            {
-              name: t`International Development Research Centre`,
-              amount2024: 0.16,
-              amount2025: 0.16,
-            },
-            {
-              name: t`Support for Embassies + Canada's Presence Abroad`,
-              amount2024: 1.23,
-              amount2025: 1.23,
-            },
-            {
-              name: t`Other International Affairs Activities`,
-              amount2024: 11.03,
-              amount2025: 11.03,
-            },
-            {
-              name: t`Trade and Investment`,
-              amount2024: 0.41,
-              amount2025: 0.41,
-            },
-          ],
+          name: t`Net actuarial losses (gains)`,
+          amount2024: 4.0,
+          amount2025: 5.0,
         },
       ],
     };
@@ -1268,107 +461,67 @@ export function BudgetSankey({ onDataChange }: BudgetSankeyProps = {}) {
             {
               name: t`Goods and Services Tax`,
               amount2024: 51.42,
-              amount2025: 51.42,
+              amount2025: 54.4,
             },
             {
-              name: t`Energy Taxes`,
-              children: [
-                {
-                  name: t`Excise Tax — Gasoline`,
-                  amount2024: 4.33,
-                  amount2025: 4.33,
-                },
-                {
-                  name: t`Excise Tax - Diesel Fuel`,
-                  amount2024: 1.12,
-                  amount2025: 1.12,
-                },
-                {
-                  name: t`Excise Tax — Aviation Gasoline and Jet Fuel`,
-                  amount2024: 0.14,
-                  amount2025: 0.14,
-                },
-              ],
-            },
-            {
-              name: t`Customs Duties`,
+              name: t`Customs Import Duties`,
               amount2024: 5.57,
-              amount2025: 5.57,
+              amount2025: 9.9,
             },
             {
               name: t`Other Excise Taxes and Duties`,
-              children: [
-                {
-                  name: t`Excise Duties`,
-                  amount2024: 5.33,
-                  amount2025: 5.33,
-                },
-                {
-                  name: t`Air Travellers Charge`,
-                  amount2024: 1.5,
-                  amount2025: 1.5,
-                },
-              ],
+              amount2024: 6.83,
+              amount2025: 13.2,
             },
           ],
         },
         {
-          name: t`Individual Income Taxes`,
-          amount2024: 217.7,
-          amount2025: 212.3,
-        },
-        {
-          name: t`Corporate Income Taxes`,
-          amount2024: 82.47,
-          amount2025: 82.47,
-        },
-        {
-          name: t`Non-resident Income Taxes`,
-          amount2024: 12.54,
-          amount2025: 12.54,
-        },
-        {
-          name: t`Payroll Taxes`,
+          name: t`Income Tax Revenues`,
           children: [
             {
-              name: t`Employment Insurance Premiums`,
-              amount2024: 29.56,
-              amount2025: 29.56,
+              name: t`Individual Income Tax`,
+              amount2024: 217.7,
+              amount2025: 237.9,
+            },
+            {
+              name: t`Corporate Income Tax`,
+              amount2024: 82.47,
+              amount2025: 97.1,
+            },
+            {
+              name: t`Non-Resident Income Tax`,
+              amount2024: 12.54,
+              amount2025: 13.7,
             },
           ],
         },
         {
-          name: t`Carbon Tax Revenue`,
+          name: t`Employment Insurance Premiums`,
+          amount2024: 29.56,
+          amount2025: 32.2,
+        },
+        {
+          name: t`Pollution pricing proceeds`,
           amount2024: 9.86,
           amount2025: 0,
         },
         {
-          name: t`Other Non-tax Revenue`,
+          name: t`Other Non-Tax Revenue`,
           children: [
             {
               name: t`Crown Corporations and other government business enterprises`,
               amount2024: 3.22,
-              amount2025: 3.22,
+              amount2025: 11.3,
             },
             {
-              name: t`Net Foreign Exchange Revenue`,
-              amount2024: 3.4,
-              amount2025: 3.4,
+              name: t`Net Foreign Exchange Revenue and Return on Investments`,
+              amount2024: 4.28,
+              amount2025: 6.0,
             },
             {
-              name: t`Return on Investments`,
-              amount2024: 0.88,
-              amount2025: 0.88,
-            },
-            {
-              name: t`Sales of Government Goods + Services`,
-              amount2024: 13.99,
-              amount2025: 13.99,
-            },
-            {
-              name: t`Miscellaneous revenues`,
+              name: t`Other Programs`,
               amount2024: 15.87,
-              amount2025: 15.87,
+              amount2025: 31.8,
             },
           ],
         },

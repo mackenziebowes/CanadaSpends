@@ -199,7 +199,7 @@ export default function Budget() {
             <StatBox
               title={<Trans>Total Budget</Trans>}
               value={`$${budgetData.spending.toFixed(1)}B`}
-              description={<Trans>Projected government budget</Trans>}
+              description={<Trans>Est. projected government budget</Trans>}
               growthPercentage={calculateGrowthPercentage(
                 budgetData.spending,
                 513.9,
@@ -208,7 +208,7 @@ export default function Budget() {
             <StatBox
               title={<Trans>Revenue</Trans>}
               value={`$${budgetData.revenue.toFixed(1)}B`}
-              description={<Trans>Projected government revenue</Trans>}
+              description={<Trans>Est. projected government revenue</Trans>}
               growthPercentage={calculateGrowthPercentage(
                 budgetData.revenue,
                 459.5,
@@ -239,7 +239,7 @@ export default function Budget() {
             <StatBox
               title={<Trans>Deficit</Trans>}
               value={`$${budgetData.deficit.toFixed(1)}B`}
-              description={<Trans>Projected budget deficit</Trans>}
+              description={<Trans>Est. projected budget deficit</Trans>}
               growthPercentage={calculateGrowthPercentage(
                 budgetData.deficit,
                 54.4,
@@ -251,14 +251,14 @@ export default function Budget() {
           <NoSSR>
             <BudgetSankey onDataChange={handleBudgetDataChange} />
           </NoSSR>
-          <div className="absolute bottom-3 left-6">
+          {/* <div className="absolute bottom-3 left-6">
             <ExternalLink
               className="text-xs text-gray-400"
               href="https://www.canada.ca/en/public-services-procurement/services/payments-accounting/public-accounts/2024.html"
             >
               Source
             </ExternalLink>
-          </div>
+          </div> */}
           <div className="absolute top-0 left-0 w-[100vw] h-full  backdrop-blur-sm z-10 text-white md:hidden flex items-center justify-center">
             <ExternalLink
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

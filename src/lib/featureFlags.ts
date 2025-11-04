@@ -14,4 +14,4 @@
  *
  * Set to TRUE on November 4th, 2025 when the Official Budget is Released.
  */
-export const IS_BUDGET_2025_LIVE = false;
+export const IS_BUDGET_2025_LIVE = true;
