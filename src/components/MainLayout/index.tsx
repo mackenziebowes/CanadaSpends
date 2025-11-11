@@ -7,9 +7,21 @@ import Link from "next/link";
 import logoFull from "./logo-full.svg";
 import logoGlyph from "./logo-glyph.svg";
 import { useState, memo } from "react";
-import { X, Menu, ChevronDown } from "lucide-react";
+import { X, Menu, ChevronDown, ChevronRight } from "lucide-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { usePathname } from "next/navigation";
+
+// NOTE: please keep these lists in alphabetical order
+const provinces = [
+  { slug: "alberta", name: "Alberta" },
+  { slug: "british-columbia", name: "British Columbia" },
+  { slug: "ontario", name: "Ontario" },
+];
+
+const municipalities = [
+  { slug: "toronto", name: "Toronto" },
+  { slug: "vancouver", name: "Vancouver" },
+];
 
 // Memoize NavLink
 const NavLink = memo(
@@ -46,7 +58,10 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
     pathname.startsWith(`/${i18n.locale}/spending`) ||
     pathname.startsWith(`/${i18n.locale}/budget`) ||
     pathname.startsWith("/ontario") ||
-    pathname.startsWith("/alberta");
+    pathname.startsWith("/alberta") ||
+    pathname.startsWith("/british-columbia") ||
+    pathname.startsWith("/toronto") ||
+    pathname.startsWith("/vancouver");
 
   return (
     <>
@@ -97,36 +112,13 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
                         <Trans>Federal</Trans>
                       </Link>
                     </DropdownMenu.Item>
+
                     <DropdownMenu.Item asChild>
                       <Link
                         href={`/${i18n.locale}/budget`}
                         className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
                       >
-                        <Trans>Fall 2025 Budget</Trans>
-                      </Link>
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item asChild>
-                      <Link
-                        href="/ontario"
-                        className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
-                      >
-                        <Trans>Ontario</Trans>
-                      </Link>
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item asChild>
-                      <Link
-                        href="/alberta"
-                        className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
-                      >
-                        <Trans>Alberta</Trans>
-                      </Link>
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item asChild>
-                      <Link
-                        href="/toronto"
-                        className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
-                      >
-                        <Trans>Toronto</Trans>
+                        <Trans>Budget</Trans>
                       </Link>
                     </DropdownMenu.Item>
                     <DropdownMenu.Item asChild>
@@ -137,6 +129,54 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
                         <Trans>Toronto (Operating)</Trans>
                       </Link>
                     </DropdownMenu.Item>
+
+                    <DropdownMenu.Sub>
+                      <DropdownMenu.SubTrigger className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer flex items-center justify-between data-[highlighted]:bg-gray-100">
+                        <Trans>Provincial</Trans>
+                        <ChevronRight className="w-4 h-4" />
+                      </DropdownMenu.SubTrigger>
+                      <DropdownMenu.Portal>
+                        <DropdownMenu.SubContent
+                          className="bg-white rounded-md shadow-lg p-1 flex flex-col min-w-[180px] z-[200]"
+                          sideOffset={8}
+                        >
+                          {provinces.map((province) => (
+                            <DropdownMenu.Item key={province.slug} asChild>
+                              <Link
+                                href={`/${province.slug}`}
+                                className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
+                              >
+                                {province.name}
+                              </Link>
+                            </DropdownMenu.Item>
+                          ))}
+                        </DropdownMenu.SubContent>
+                      </DropdownMenu.Portal>
+                    </DropdownMenu.Sub>
+
+                    <DropdownMenu.Sub>
+                      <DropdownMenu.SubTrigger className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer flex items-center justify-between data-[state=open]:bg-transparent data-[highlighted]:bg-gray-100">
+                        <Trans>Municipal</Trans>
+                        <ChevronRight className="w-4 h-4" />
+                      </DropdownMenu.SubTrigger>
+                      <DropdownMenu.Portal>
+                        <DropdownMenu.SubContent
+                          className="bg-white rounded-md shadow-lg p-1 flex flex-col min-w-[180px] z-[200]"
+                          sideOffset={8}
+                        >
+                          {municipalities.map((municipality) => (
+                            <DropdownMenu.Item key={municipality.slug} asChild>
+                              <Link
+                                href={`/${municipality.slug}`}
+                                className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
+                              >
+                                {municipality.name}
+                              </Link>
+                            </DropdownMenu.Item>
+                          ))}
+                        </DropdownMenu.SubContent>
+                      </DropdownMenu.Portal>
+                    </DropdownMenu.Sub>
                   </DropdownMenu.Content>
                 </DropdownMenu.Portal>
               </DropdownMenu.Root>
@@ -236,6 +276,7 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
                 <Trans>Federal</Trans>
               </span>
             </MobileNavLink>
+
             <MobileNavLink
               href={`/${i18n.locale}/budget`}
               active={pathname.startsWith(`/${i18n.locale}/budget`)}
@@ -245,23 +286,36 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
                 <Trans>Budget</Trans>
               </span>
             </MobileNavLink>
-            <MobileNavLink
-              href="/ontario"
-              active={pathname.startsWith("/ontario")}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <span className="pl-4 inline-block">
-                <Trans>Ontario</Trans>
-              </span>
-            </MobileNavLink>
-            <MobileNavLink
-              href="/alberta"
-              active={pathname.startsWith("/alberta")}
-            >
-              <span className="pl-4 inline-block">
-                <Trans>Alberta</Trans>
-              </span>
-            </MobileNavLink>
+
+            {/* Provincial submenu */}
+            <p className="px-3 pl-7 pt-2 text-sm font-medium text-gray-500">
+              <Trans>Provincial</Trans>
+            </p>
+            {provinces.map((province) => (
+              <MobileNavLink
+                key={province.slug}
+                href={`/${province.slug}`}
+                active={pathname.startsWith(`/${province.slug}`)}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="pl-8 inline-block">{province.name}</span>
+              </MobileNavLink>
+            ))}
+
+            {/* Municipal submenu */}
+            <p className="px-3 pl-7 text-sm font-medium text-gray-500">
+              <Trans>Municipal</Trans>
+            </p>
+            {municipalities.map((municipality) => (
+              <MobileNavLink
+                key={municipality.slug}
+                href={`/${municipality.slug}`}
+                active={pathname.startsWith(`/${municipality.slug}`)}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="pl-8 inline-block">{municipality.name}</span>
+              </MobileNavLink>
+            ))}
             <MobileNavLink
               href={`/${i18n.locale}/tax-visualizer`}
               active={pathname === `/${i18n.locale}/tax-visualizer`}

@@ -125,7 +125,8 @@ export default async function ProvinceIndex({
   const revenueRoot = sankey.revenue_data as SankeyNode | undefined;
   const propertyTaxNode = revenueRoot?.children?.find(
     (child) =>
-      child.name === "Property taxes & taxation from other governments",
+      child.name === "Property taxes & taxation from other governments" ||
+      "Property tax and business taxes",
   );
   const propertyTaxTotal = propertyTaxNode ? sumNode(propertyTaxNode) : null;
   const propertyTaxPerCapita =
@@ -301,14 +302,16 @@ export default async function ProvinceIndex({
         <Section>
           <H2>
             <Trans>
-              Financial Year {jurisdiction.financialYear} {jurisdiction.name}{" "}
-              Government Revenue and Spending
+              Financial Year {jurisdiction.financialYear} {jurisdiction.name}
+              {jurisdiction.name === "Toronto" ? `'s Operational` : ""} Revenue
+              and Spending
             </Trans>
           </H2>
           <P>
             <Trans>
-              Explore {jurisdiction.name} revenue and spending categories or{" "}
-              filter by ministry for deeper insights.
+              Explore {jurisdiction.name}
+              {jurisdiction.name === "Toronto" ? "'s operational" : ""} revenue
+              and spending categories or filter by ministry for deeper insights.
             </Trans>
           </P>
         </Section>
@@ -345,6 +348,14 @@ export default async function ProvinceIndex({
               />
             ))}
           </div>
+          {jurisdiction.name === "Toronto" && (
+            <P className="text-sm text-gray-600">
+              <Trans>
+                Note: Figures above refer to Toronto's operational expenses
+                only.
+              </Trans>
+            </P>
+          )}
         </Section>
         <Section>
           <H2>
