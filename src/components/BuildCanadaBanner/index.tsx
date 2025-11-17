@@ -4,7 +4,7 @@ import React from "react";
 
 export default function BuildCanadaBanner() {
   return (
-    <div className="w-full bg-[#932f2f] text-white py-3 px-4 sm:px-12">
+    <div className="w-full bg-[#771e1e] text-white py-3 px-4 sm:px-12">
       <div className="max-w-[120rem] m-auto text-center">
         <p className="text-sm sm:text-base">
           Help bring transparency to Canadians.{" "}
@@ -14,7 +14,7 @@ export default function BuildCanadaBanner() {
             rel="noopener noreferrer"
             className="font-semibold underline hover:no-underline"
           >
-            Join Build Canada 🏗️🇨🇦
+            Join Build Canada
           </a>
         </p>
       </div>
