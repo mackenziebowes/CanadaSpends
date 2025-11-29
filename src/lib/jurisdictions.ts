@@ -375,6 +375,8 @@ export function getExpandedDepartments(jurisdiction: string): Department[] {
 export function departmentHref(
   jurisdiction: string,
   department: string,
+  locale?: string,
 ): string {
-  return `/${jurisdiction}/departments/${department}`;
+  const path = `/${jurisdiction}/departments/${department}`;
+  return locale ? `/${locale}${path}` : path;
 }

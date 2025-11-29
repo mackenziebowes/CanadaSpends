@@ -148,7 +148,7 @@ export const MainLayout = ({
                           {provinces.map((provinceSlug) => (
                             <DropdownMenu.Item key={provinceSlug} asChild>
                               <Link
-                                href={`/${provinceSlug}`}
+                                href={`/${i18n.locale}/${provinceSlug}`}
                                 className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
                               >
                                 {provinceNames[provinceSlug]}
@@ -187,7 +187,7 @@ export const MainLayout = ({
                                         asChild
                                       >
                                         <Link
-                                          href={`/${municipality.slug}`}
+                                          href={`/${i18n.locale}/${municipality.slug}`}
                                           className="px-3 py-2 text-sm hover:bg-gray-100 rounded cursor-pointer"
                                         >
                                           {municipality.name}
@@ -320,8 +320,8 @@ export const MainLayout = ({
             {provinces.map((provinceSlug) => (
               <MobileNavLink
                 key={provinceSlug}
-                href={`/${provinceSlug}`}
-                active={pathname.startsWith(`/${provinceSlug}`)}
+                href={`/${i18n.locale}/${provinceSlug}`}
+                active={pathname.startsWith(`/${i18n.locale}/${provinceSlug}`)}
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="pl-8 inline-block">
@@ -342,8 +342,10 @@ export const MainLayout = ({
                 {municipalities.map((municipality) => (
                   <MobileNavLink
                     key={municipality.slug}
-                    href={`/${municipality.slug}`}
-                    active={pathname.startsWith(`/${municipality.slug}`)}
+                    href={`/${i18n.locale}/${municipality.slug}`}
+                    active={pathname.startsWith(
+                      `/${i18n.locale}/${municipality.slug}`,
+                    )}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <span className="pl-12 inline-block">
