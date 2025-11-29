@@ -18,6 +18,7 @@ import {
 import NoSSR from "@/components/NoSSR";
 import { Sankey } from "@/components/Sankey";
 import { Trans, useLingui } from "@lingui/react/macro";
+import { localizedPath } from "@/lib/utils";
 
 const StatBox = ({
   title,
@@ -101,7 +102,7 @@ const calculateGrowthPercentage = (dataType: string) => {
 };
 
 export default function Spending() {
-  const { t } = useLingui();
+  const { t, i18n } = useLingui();
   return (
     <Page>
       <PageContent>
@@ -143,7 +144,7 @@ export default function Spending() {
         <div className="absolute top-0 left-0 w-[100vw] h-full  backdrop-blur-sm z-10 text-white md:hidden flex items-center justify-center">
           <ExternalLink
             className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            href="/spending-full-screen"
+            href={localizedPath("/spending-full-screen", i18n.locale)}
           >
             <Trans>View this chart in full screen</Trans>
           </ExternalLink>
@@ -271,8 +272,10 @@ export default function Spending() {
               occur despite our best efforts. We aim to make this information
               more accessible and accurate, and we welcome feedback. If you
               notice any issues, please let us know{" "}
-              <InternalLink href="/contact">here</InternalLink> — we appreciate
-              it and will work to address them promptly.
+              <InternalLink href="/contact" lang={i18n.locale}>
+                here
+              </InternalLink>{" "}
+              — we appreciate it and will work to address them promptly.
             </Trans>
           </P>
         </Section>

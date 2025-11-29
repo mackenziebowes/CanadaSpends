@@ -8,6 +8,7 @@ import { FiCornerLeftDown, FiCornerRightDown } from "react-icons/fi";
 import { LuReceipt, LuUsersRound } from "react-icons/lu";
 import { PiBank } from "react-icons/pi";
 import { IS_BUDGET_2025_LIVE } from "@/lib/featureFlags";
+import { localizedPath } from "@/lib/utils";
 
 export default async function Page(props: PageLangParam) {
   const lang = (await props.params).lang;
@@ -48,7 +49,10 @@ export default async function Page(props: PageLangParam) {
                 <div className="flex gap-4">
                   <Link
                     className="text-white bg-indigo-950 hover:bg-indigo-900 items-center font-medium justify-center py-2 px-4 relative flex w-auto min-w-[7.00rem] max-w-full overflow-hidden"
-                    href={IS_BUDGET_2025_LIVE ? "/budget" : "/spending"}
+                    href={localizedPath(
+                      IS_BUDGET_2025_LIVE ? "/budget" : "/spending",
+                      lang,
+                    )}
                   >
                     <div className="items-center cursor-pointer justify-center relative flex overflow-hidden">
                       <div className="items-center justify-center flex p-1">
@@ -62,7 +66,7 @@ export default async function Page(props: PageLangParam) {
                   </Link>
                   <Link
                     className="text-indigo-950 bg-white border-indigo-950 border-2 hover:bg-gray-100 items-center font-medium justify-center py-2 px-4 relative flex w-auto min-w-[7.00rem] max-w-full overflow-hidden"
-                    href="/ontario"
+                    href={localizedPath("/ontario", lang)}
                   >
                     <div className="items-center cursor-pointer justify-center relative flex overflow-hidden">
                       <div className="items-center justify-center flex p-1">
