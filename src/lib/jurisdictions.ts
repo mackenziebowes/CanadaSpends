@@ -5,6 +5,108 @@ import { provinceNames } from "./provinceNames";
 
 const dataDir = path.join(process.cwd(), "data");
 
+/**
+ * Find the latest year folder in a jurisdiction directory that contains summary.json.
+ * Returns the year string (e.g., "2024") or null if no valid year folders found.
+ */
+function findLatestYear(jurisdictionPath: string): string | null {
+  if (!fs.existsSync(jurisdictionPath)) {
+    return null;
+  }
+
+  const entries = fs.readdirSync(jurisdictionPath);
+  const yearFolders = entries
+    .filter((entry) => {
+      const fullPath = path.join(jurisdictionPath, entry);
+      return (
+        fs.statSync(fullPath).isDirectory() &&
+        /^\d{4}$/.test(entry) && // Matches 4-digit year folders
+        fs.existsSync(path.join(fullPath, "summary.json")) // Must have summary.json
+      );
+    })
+    .map((year) => parseInt(year, 10))
+    .sort((a, b) => b - a); // Sort descending (latest first)
+
+  if (yearFolders.length === 0) {
+    return null;
+  }
+
+  return yearFolders[0].toString();
+}
+
+/**
+ * Get the path to the data files for a jurisdiction (in the latest year folder).
+ * Falls back to the jurisdiction path directly if no year folders exist (backward compatibility).
+ */
+function getJurisdictionDataPath(jurisdictionPath: string): string {
+  const latestYear = findLatestYear(jurisdictionPath);
+  if (latestYear) {
+    return path.join(jurisdictionPath, latestYear);
+  }
+  // Fallback: return the jurisdiction path directly (for backward compatibility)
+  return jurisdictionPath;
+}
+
+/**
+ * Find the data path for a jurisdiction slug.
+ * Handles both provincial and municipal jurisdictions, with optional explicit province.
+ * @param jurisdiction - Slug in format "province" (provincial), "province/municipality" (municipal), or just "municipality" (will search)
+ * @returns The data path to the jurisdiction's data folder, or null if not found
+ */
+function findJurisdictionDataPath(jurisdiction: string): string | null {
+  const parts = jurisdiction.split("/");
+
+  if (parts.length === 1) {
+    // Could be a province or a municipality - check both
+    const provincialPath = path.join(dataDir, "provincial", jurisdiction);
+    const provincialDataPath = getJurisdictionDataPath(provincialPath);
+    const provincialSummaryPath = path.join(provincialDataPath, "summary.json");
+
+    if (fs.existsSync(provincialSummaryPath)) {
+      return provincialDataPath;
+    }
+
+    // It's likely a municipality - search for it
+    const municipalDir = path.join(dataDir, "municipal");
+    if (!fs.existsSync(municipalDir)) {
+      return null;
+    }
+
+    const provinces = fs.readdirSync(municipalDir).filter((f) => {
+      const provincePath = path.join(municipalDir, f);
+      return fs.statSync(provincePath).isDirectory();
+    });
+
+    for (const province of provinces) {
+      const municipalityPath = path.join(municipalDir, province, jurisdiction);
+      const municipalityDataPath = getJurisdictionDataPath(municipalityPath);
+      const summaryPath = path.join(municipalityDataPath, "summary.json");
+      if (fs.existsSync(summaryPath)) {
+        return municipalityDataPath;
+      }
+    }
+
+    return null;
+  } else if (parts.length === 2) {
+    // Municipal jurisdiction with explicit province
+    const [province, municipality] = parts;
+    const municipalityPath = path.join(
+      dataDir,
+      "municipal",
+      province,
+      municipality,
+    );
+    const municipalityDataPath = getJurisdictionDataPath(municipalityPath);
+    const summaryPath = path.join(municipalityDataPath, "summary.json");
+    if (fs.existsSync(summaryPath)) {
+      return municipalityDataPath;
+    }
+    return null;
+  }
+
+  return null;
+}
+
 export type Jurisdiction = {
   slug: string;
   name: string;
@@ -72,10 +174,11 @@ export function getProvincialSlugs(): string[] {
   }
   return fs.readdirSync(provincialDir).filter((f) => {
     const fullPath = path.join(provincialDir, f);
-    return (
-      fs.statSync(fullPath).isDirectory() &&
-      fs.existsSync(path.join(fullPath, "summary.json"))
-    );
+    if (!fs.statSync(fullPath).isDirectory()) {
+      return false;
+    }
+    const dataPath = getJurisdictionDataPath(fullPath);
+    return fs.existsSync(path.join(dataPath, "summary.json"));
   });
 }
 
@@ -108,14 +211,17 @@ export function getMunicipalitiesByProvince(): Array<{
       .readdirSync(provincePath)
       .filter((f) => {
         const municipalityPath = path.join(provincePath, f);
-        return (
-          fs.statSync(municipalityPath).isDirectory() &&
-          fs.existsSync(path.join(municipalityPath, "summary.json"))
-        );
+        if (!fs.statSync(municipalityPath).isDirectory()) {
+          return false;
+        }
+        const dataPath = getJurisdictionDataPath(municipalityPath);
+        return fs.existsSync(path.join(dataPath, "summary.json"));
       })
       .map((slug) => {
         // Try to get the name from summary.json, fallback to slug
-        const summaryPath = path.join(provincePath, slug, "summary.json");
+        const municipalityPath = path.join(provincePath, slug);
+        const dataPath = getJurisdictionDataPath(municipalityPath);
+        const summaryPath = path.join(dataPath, "summary.json");
         let name = slug;
         try {
           const summaryData = JSON.parse(fs.readFileSync(summaryPath, "utf8"));
@@ -163,10 +269,11 @@ export function getJurisdictionSlugs(): string[] {
       const provincePath = path.join(municipalDir, province);
       const municipalities = fs.readdirSync(provincePath).filter((f) => {
         const municipalityPath = path.join(provincePath, f);
-        return (
-          fs.statSync(municipalityPath).isDirectory() &&
-          fs.existsSync(path.join(municipalityPath, "summary.json"))
-        );
+        if (!fs.statSync(municipalityPath).isDirectory()) {
+          return false;
+        }
+        const dataPath = getJurisdictionDataPath(municipalityPath);
+        return fs.existsSync(path.join(dataPath, "summary.json"));
       });
 
       // Return just the municipality slug, not the nested path
@@ -182,55 +289,11 @@ export function getJurisdictionSlugs(): string[] {
 /**
  * Get jurisdiction data, supporting both provincial and municipal paths.
  * @param jurisdiction - Slug in format "province" (provincial), "province/municipality" (municipal), or just "municipality" (will search)
+ * @throws Error if jurisdiction data is not found
  */
 export function getJurisdictionData(jurisdiction: string): Data {
   const parts = jurisdiction.split("/");
-  let jurisdictionPath: string | undefined;
-
-  if (parts.length === 1) {
-    // Could be a province or a municipality - check both
-    const provincialPath = path.join(dataDir, "provincial", jurisdiction);
-    const provincialSummaryPath = path.join(provincialPath, "summary.json");
-
-    if (fs.existsSync(provincialSummaryPath)) {
-      // It's a provincial jurisdiction
-      jurisdictionPath = provincialPath;
-    } else {
-      // It's likely a municipality - search for it
-      const municipalDir = path.join(dataDir, "municipal");
-      if (!fs.existsSync(municipalDir)) {
-        throw new Error(`Jurisdiction data not found: ${jurisdiction}`);
-      }
-
-      const provinces = fs.readdirSync(municipalDir).filter((f) => {
-        const provincePath = path.join(municipalDir, f);
-        return fs.statSync(provincePath).isDirectory();
-      });
-
-      for (const province of provinces) {
-        const municipalityPath = path.join(
-          municipalDir,
-          province,
-          jurisdiction,
-        );
-        const summaryPath = path.join(municipalityPath, "summary.json");
-        if (fs.existsSync(summaryPath)) {
-          jurisdictionPath = municipalityPath;
-          break;
-        }
-      }
-
-      if (!jurisdictionPath) {
-        throw new Error(`Jurisdiction data not found: ${jurisdiction}`);
-      }
-    }
-  } else if (parts.length === 2) {
-    // Municipal jurisdiction with explicit province
-    const [province, municipality] = parts;
-    jurisdictionPath = path.join(dataDir, "municipal", province, municipality);
-  } else {
-    throw new Error(`Invalid jurisdiction format: ${jurisdiction}`);
-  }
+  const jurisdictionPath = findJurisdictionDataPath(jurisdiction);
 
   if (!jurisdictionPath) {
     throw new Error(`Jurisdiction data not found: ${jurisdiction}`);
@@ -243,115 +306,77 @@ export function getJurisdictionData(jurisdiction: string): Data {
     throw new Error(`Jurisdiction data not found: ${jurisdiction}`);
   }
 
-  const jurisdictionData = JSON.parse(fs.readFileSync(summaryPath, "utf8"));
+  if (!fs.existsSync(sankeyPath)) {
+    throw new Error(`Sankey data not found for jurisdiction: ${jurisdiction}`);
+  }
 
-  return {
-    jurisdiction: { slug: parts[parts.length - 1], ...jurisdictionData },
-    sankey: JSON.parse(fs.readFileSync(sankeyPath, "utf8")),
-  };
+  try {
+    const jurisdictionData = JSON.parse(fs.readFileSync(summaryPath, "utf8"));
+    const sankeyData = JSON.parse(fs.readFileSync(sankeyPath, "utf8"));
+
+    return {
+      jurisdiction: { slug: parts[parts.length - 1], ...jurisdictionData },
+      sankey: sankeyData,
+    };
+  } catch (error) {
+    throw new Error(
+      `Failed to parse data files for jurisdiction ${jurisdiction}: ${error instanceof Error ? error.message : String(error)}`,
+    );
+  }
 }
 
+/**
+ * Get department data for a specific jurisdiction and department.
+ * @param jurisdiction - Slug in format "province" (provincial), "province/municipality" (municipal), or just "municipality" (will search)
+ * @param department - Department slug
+ * @throws Error if jurisdiction or department data is not found
+ */
 export function getDepartmentData(
   jurisdiction: string,
   department: string,
 ): Department {
-  const parts = jurisdiction.split("/");
-  let jurisdictionPath: string | undefined;
-
-  if (parts.length === 1) {
-    // Check if it's provincial first
-    const provincialPath = path.join(dataDir, "provincial", jurisdiction);
-    if (fs.existsSync(path.join(provincialPath, "summary.json"))) {
-      jurisdictionPath = provincialPath;
-    } else {
-      // Find municipality
-      const municipalDir = path.join(dataDir, "municipal");
-      if (!fs.existsSync(municipalDir)) {
-        throw new Error(`Jurisdiction data not found: ${jurisdiction}`);
-      }
-      const provinces = fs.readdirSync(municipalDir).filter((f) => {
-        return fs.statSync(path.join(municipalDir, f)).isDirectory();
-      });
-
-      for (const province of provinces) {
-        const municipalityPath = path.join(
-          municipalDir,
-          province,
-          jurisdiction,
-        );
-        if (fs.existsSync(path.join(municipalityPath, "summary.json"))) {
-          jurisdictionPath = municipalityPath;
-          break;
-        }
-      }
-      if (!jurisdictionPath) {
-        throw new Error(`Jurisdiction data not found: ${jurisdiction}`);
-      }
-    }
-  } else if (parts.length === 2) {
-    const [province, municipality] = parts;
-    jurisdictionPath = path.join(dataDir, "municipal", province, municipality);
-  } else {
-    throw new Error(`Invalid jurisdiction format: ${jurisdiction}`);
-  }
+  const jurisdictionPath = findJurisdictionDataPath(jurisdiction);
 
   if (!jurisdictionPath) {
     throw new Error(`Jurisdiction data not found: ${jurisdiction}`);
   }
 
-  const departmentData: Omit<Department, "slug"> = JSON.parse(
-    fs.readFileSync(
-      path.join(jurisdictionPath, "departments", `${department}.json`),
-      "utf8",
-    ),
+  const departmentPath = path.join(
+    jurisdictionPath,
+    "departments",
+    `${department}.json`,
   );
 
-  return {
-    slug: department,
-    ...departmentData,
-  };
+  if (!fs.existsSync(departmentPath)) {
+    throw new Error(
+      `Department data not found: ${department} for jurisdiction ${jurisdiction}`,
+    );
+  }
+
+  try {
+    const departmentData: Omit<Department, "slug"> = JSON.parse(
+      fs.readFileSync(departmentPath, "utf8"),
+    );
+
+    return {
+      slug: department,
+      ...departmentData,
+    };
+  } catch (error) {
+    throw new Error(
+      `Failed to parse department data for ${department} in ${jurisdiction}: ${error instanceof Error ? error.message : String(error)}`,
+    );
+  }
 }
 
+/**
+ * Get list of department slugs for a jurisdiction.
+ * Returns empty array if jurisdiction not found or has no departments (non-throwing).
+ * @param jurisdiction - Slug in format "province" (provincial), "province/municipality" (municipal), or just "municipality" (will search)
+ * @returns Array of department slugs, or empty array if none found
+ */
 export function getDepartmentsForJurisdiction(jurisdiction: string): string[] {
-  const parts = jurisdiction.split("/");
-  let jurisdictionPath: string | undefined;
-
-  if (parts.length === 1) {
-    // Check if it's provincial first
-    const provincialPath = path.join(dataDir, "provincial", jurisdiction);
-    if (fs.existsSync(path.join(provincialPath, "summary.json"))) {
-      jurisdictionPath = provincialPath;
-    } else {
-      // Find municipality
-      const municipalDir = path.join(dataDir, "municipal");
-      if (!fs.existsSync(municipalDir)) {
-        return [];
-      }
-      const provinces = fs.readdirSync(municipalDir).filter((f) => {
-        return fs.statSync(path.join(municipalDir, f)).isDirectory();
-      });
-
-      for (const province of provinces) {
-        const municipalityPath = path.join(
-          municipalDir,
-          province,
-          jurisdiction,
-        );
-        if (fs.existsSync(path.join(municipalityPath, "summary.json"))) {
-          jurisdictionPath = municipalityPath;
-          break;
-        }
-      }
-      if (!jurisdictionPath) {
-        return [];
-      }
-    }
-  } else if (parts.length === 2) {
-    const [province, municipality] = parts;
-    jurisdictionPath = path.join(dataDir, "municipal", province, municipality);
-  } else {
-    throw new Error(`Invalid jurisdiction format: ${jurisdiction}`);
-  }
+  const jurisdictionPath = findJurisdictionDataPath(jurisdiction);
 
   if (!jurisdictionPath) {
     return [];
@@ -361,10 +386,15 @@ export function getDepartmentsForJurisdiction(jurisdiction: string): string[] {
   if (!fs.existsSync(departmentsDir)) {
     return [];
   }
-  return fs
-    .readdirSync(departmentsDir)
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => f.replace(".json", ""));
+
+  try {
+    return fs
+      .readdirSync(departmentsDir)
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => f.replace(".json", ""));
+  } catch {
+    return [];
+  }
 }
 
 export function getExpandedDepartments(jurisdiction: string): Department[] {
