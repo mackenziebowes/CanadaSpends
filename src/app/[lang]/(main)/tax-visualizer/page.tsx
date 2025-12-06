@@ -7,6 +7,7 @@ import { StatCard } from "@/components/StatCard";
 import { CombinedSpendingChart } from "@/components/CombinedSpendingChart";
 import { calculateTotalTax, formatCurrency } from "@/lib/taxCalculator";
 import { calculatePersonalTaxBreakdown } from "@/lib/personalTaxBreakdown";
+import { localizedPath } from "@/lib/utils";
 
 type ProvinceData = {
   name: string;
@@ -223,7 +224,7 @@ function TaxBracketsTable({ province }: TaxBracketsTableProps) {
 // Remove the old SpendingVisualization component since we're using the combined chart
 
 export default function TaxCalculatorPage() {
-  const { t } = useLingui();
+  const { t, i18n } = useLingui();
   const [income, setIncome] = useState<number>(100000);
   const [province, setProvince] = useState<string>("ontario");
 
@@ -283,12 +284,18 @@ export default function TaxCalculatorPage() {
                 <p>
                   <Trans>
                     For further breakdowns of spending, see{" "}
-                    <a href="/spending" className="underline">
+                    <a
+                      href={localizedPath("/spending", i18n.locale)}
+                      className="underline"
+                    >
                       Federal
                     </a>{" "}
                     and{" "}
                     <a
-                      href={province === "alberta" ? "/alberta" : "/ontario"}
+                      href={localizedPath(
+                        province === "alberta" ? "/alberta" : "/ontario",
+                        i18n.locale,
+                      )}
                       className="underline"
                     >
                       Provincial

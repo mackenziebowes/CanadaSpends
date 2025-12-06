@@ -22,13 +22,13 @@ export const ONTARIO_BASIC_PERSONAL_AMOUNT = 12399;
 // 2024 Alberta basic personal amount
 export const ALBERTA_BASIC_PERSONAL_AMOUNT = 21885;
 
-// 2024 Federal tax brackets
+// 2025 Federal tax brackets
 export const FEDERAL_TAX_BRACKETS: TaxBracket[] = [
-  { min: 0, max: 55867, rate: 0.15 },
-  { min: 55867, max: 111733, rate: 0.205 },
-  { min: 111733, max: 173205, rate: 0.26 },
-  { min: 173205, max: 246752, rate: 0.29 },
-  { min: 246752, max: null, rate: 0.33 },
+  { min: 0, max: 57375, rate: 0.145 },
+  { min: 57375, max: 114750, rate: 0.205 },
+  { min: 114750, max: 177882, rate: 0.26 },
+  { min: 177882, max: 253414, rate: 0.29 },
+  { min: 253414, max: null, rate: 0.33 },
 ];
 
 // 2024 Ontario provincial tax brackets
@@ -78,8 +78,8 @@ export function calculateFederalTax(income: number): number {
     FEDERAL_TAX_BRACKETS,
   );
 
-  // Step 2: Apply BPA as a credit (15% of BPA)
-  const bpaCredit = FEDERAL_BASIC_PERSONAL_AMOUNT * 0.15;
+  // Step 2: Apply BPA as a credit (14.5% of BPA - lowest federal rate)
+  const bpaCredit = FEDERAL_BASIC_PERSONAL_AMOUNT * 0.145;
 
   // Step 3: Subtract the credit from the calculated tax
   return Math.max(0, taxOnFullIncome - bpaCredit);
@@ -97,6 +97,38 @@ export function calculateOntarioTax(income: number): number {
 
   // Step 3: Subtract the credit from the calculated tax
   return Math.max(0, taxOnFullIncome - bpaCredit);
+}
+
+function calculateOntarioSurtax(basetax: number): number {
+  if (basetax <= 5710) {
+    return 0;
+  } else if (basetax <= 7307) {
+    return 0.2 * (basetax - 5710);
+  } else {
+    const surtaxAbove5710 = 0.2 * (7307 - 5710);
+    const surtaxAbove7307 = 0.36 * (basetax - 7307);
+    return surtaxAbove5710 + surtaxAbove7307;
+  }
+}
+
+function calculateOntarioHealthPm(income: number): number {
+  if (income <= 20000) {
+    return 0;
+  } else if (income > 20000 && income <= 36000) {
+    return Math.min(300, 0.06 * (income - 20000));
+  } else if (income > 36000 && income <= 48000) {
+    const taxAbove36000 = 0.06 * (income - 36000);
+    return Math.min(450, 300 + taxAbove36000);
+  } else if (income > 48000 && income <= 72000) {
+    const taxAbove48000 = 0.25 * (income - 48000);
+    return Math.min(600, 450 + taxAbove48000);
+  } else if (income > 72000 && income <= 200000) {
+    const taxAbove72000 = 0.25 * (income - 72000);
+    return Math.min(750, 600 + taxAbove72000);
+  } else {
+    const taxAbove200000 = 0.25 * (income - 200000);
+    return Math.min(750 + taxAbove200000, 900);
+  }
 }
 
 export function calculateAlbertaTax(income: number): number {
@@ -123,12 +155,16 @@ export function calculateTotalTax(
   switch (province.toLowerCase()) {
     case "ontario":
       provincialTax = calculateOntarioTax(income);
+      provincialTax += calculateOntarioHealthPm(income);
+      provincialTax += calculateOntarioSurtax(provincialTax);
       break;
     case "alberta":
       provincialTax = calculateAlbertaTax(income);
       break;
     default:
       provincialTax = calculateOntarioTax(income); // Default to Ontario for now
+      provincialTax += calculateOntarioHealthPm(income);
+      provincialTax += calculateOntarioSurtax(provincialTax);
   }
 
   const totalTax = federalTax + provincialTax;

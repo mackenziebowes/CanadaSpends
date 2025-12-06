@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, localizedPath } from "@/lib/utils";
 
 export const Section = ({
   children,
@@ -145,15 +145,22 @@ export const InternalLink = ({
   children,
   href,
   className = "",
+  lang,
 }: {
   children: React.ReactNode;
   href: string;
   className?: string;
-}) => (
-  <Link
-    href={href}
-    className={`text-blue-500 underline hover:text-blue-600 ${className}`}
-  >
-    {children}
-  </Link>
-);
+  lang?: string;
+}) => {
+  // If lang is provided, ensure the href is localized
+  const localizedHref = lang ? localizedPath(href, lang) : href;
+
+  return (
+    <Link
+      href={localizedHref}
+      className={`text-blue-500 underline hover:text-blue-600 ${className}`}
+    >
+      {children}
+    </Link>
+  );
+};

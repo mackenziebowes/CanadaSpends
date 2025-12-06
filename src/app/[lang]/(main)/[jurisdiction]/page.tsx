@@ -18,6 +18,7 @@ import {
   getJurisdictionData,
   getJurisdictionSlugs,
 } from "@/lib/jurisdictions";
+import { localizedPath } from "@/lib/utils";
 import { Trans } from "@lingui/react/macro";
 
 const HelpIcon = () => (
@@ -148,16 +149,14 @@ export default async function ProvinceIndex({
       key: "budget-balance",
       title: (
         <div className="flex items-center">
-          <Trans>Budget Surplus/Deficit</Trans>
+          <Trans>Surplus/Deficit</Trans>
           <Tooltip text="The difference between revenue and spending. A surplus indicates revenue exceeded spending.">
             <HelpIcon />
           </Tooltip>
         </div>
       ),
       value: budgetValue,
-      description: (
-        <Trans>Budget balance for {jurisdiction.financialYear}</Trans>
-      ),
+      description: <Trans>Balance for {jurisdiction.financialYear}</Trans>,
     },
     {
       key: "total-revenue",
@@ -302,21 +301,24 @@ export default async function ProvinceIndex({
         <Section>
           <H2>
             <Trans>
-              Financial Year {jurisdiction.financialYear} {jurisdiction.name}
-              {jurisdiction.name === "Toronto" ? `'s Operational` : ""} Revenue
-              and Spending
+              {jurisdiction.name}'s Revenue and Spending in Financial Year{" "}
+              {jurisdiction.financialYear}
             </Trans>
           </H2>
           <P>
             <Trans>
-              Explore {jurisdiction.name}
-              {jurisdiction.name === "Toronto" ? "'s operational" : ""} revenue
-              and spending categories or filter by ministry for deeper insights.
+              Look back at what {jurisdiction.name}'s government made and spent.{" "}
+              {["Toronto", "Vancouver"].includes(jurisdiction.name) && (
+                <Trans>Numbers are reported on an accrual basis.</Trans>
+              )}
             </Trans>
           </P>
         </Section>
         <div className="sankey-chart-container relative overflow-hidden sm:(mr-0 ml-0) md:(min-h-[776px] min-w-[1280px] w-screen -ml-[50vw] -mr-[50vw] left-1/2 right-1/2)">
-          <JurisdictionSankey data={sankey} />
+          <JurisdictionSankey
+            data={sankey}
+            jurisdictionSlug={jurisdiction.slug}
+          />
           <div className="absolute bottom-3 left-6">
             <ExternalLink
               className="text-xs text-gray-400"
@@ -332,7 +334,10 @@ export default async function ProvinceIndex({
           <div className="absolute top-0 left-0 w-[100vw] h-full  backdrop-blur-sm z-10 text-white md:hidden flex items-center justify-center">
             <ExternalLink
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              href={`/${jurisdiction.slug}/spending-full-screen`}
+              href={localizedPath(
+                `/${jurisdiction.slug}/spending-full-screen`,
+                lang,
+              )}
             >
               <Trans>View this chart in full screen</Trans>
             </ExternalLink>
@@ -352,14 +357,6 @@ export default async function ProvinceIndex({
               />
             ))}
           </div>
-          {jurisdiction.name === "Toronto" && (
-            <P className="text-sm text-gray-600">
-              <Trans>
-                Note: Figures above refer to Toronto's operational expenses
-                only.
-              </Trans>
-            </P>
-          )}
         </Section>
         <Section>
           <H2>
@@ -422,6 +419,32 @@ export default async function ProvinceIndex({
             />
           </Section>
         )}
+        {jurisdiction.methodology && (
+          <Section>
+            <H2>
+              <Trans>Methodology</Trans>
+            </H2>
+            {jurisdiction.methodology.split("\n\n").map((paragraph, index) => (
+              <P key={index}>
+                {paragraph.match(/\*\*([^*]+)\*\*/) ||
+                paragraph.match(/\[([^\]]+)\]\(([^)]+)\)/) ? (
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: paragraph
+                        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+                        .replace(
+                          /\[([^\]]+)\]\(([^)]+)\)/g,
+                          '<a href="$2" class="text-blue-500 underline hover:text-blue-600" target="_blank" rel="noopener noreferrer">$1</a>',
+                        ),
+                    }}
+                  />
+                ) : (
+                  <Trans>{paragraph}</Trans>
+                )}
+              </P>
+            ))}
+          </Section>
+        )}
         <Section>
           <H2>
             <Trans>Sources</Trans>
@@ -433,11 +456,37 @@ export default async function ProvinceIndex({
               occur despite our best efforts. We aim to make this information
               more accessible and accurate, and we welcome feedback. If you
               notice any issues, please let us know{" "}
-              <InternalLink href="/contact">here</InternalLink> — we appreciate
-              it and will work to address them promptly.
+              <InternalLink href="/contact" lang={lang}>
+                here
+              </InternalLink>{" "}
+              — we appreciate it and will work to address them promptly.
             </Trans>
           </P>
         </Section>
+        {jurisdiction.credits && (
+          <Section className="text-center text-sm">
+            <hr className="my-8"></hr>
+            {jurisdiction.credits.split("\n\n").map((paragraph, index) => (
+              <P key={index}>
+                {paragraph.match(/\*\*([^*]+)\*\*/) ||
+                paragraph.match(/\[([^\]]+)\]\(([^)]+)\)/) ? (
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: paragraph
+                        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+                        .replace(
+                          /\[([^\]]+)\]\(([^)]+)\)/g,
+                          '<a href="$2" class="text-blue-500 underline hover:text-blue-600" target="_blank" rel="noopener noreferrer">$1</a>',
+                        ),
+                    }}
+                  />
+                ) : (
+                  <Trans>{paragraph}</Trans>
+                )}
+              </P>
+            ))}
+          </Section>
+        )}
       </PageContent>
     </Page>
   );
