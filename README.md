@@ -1,10 +1,24 @@
-# Canada Spends helps Canadians understand how their government spends their money
+# Canada Spends 
+
+We help Canadians understand how their governments spend their money.
+
+A government cannot be held accountable if people don't understand what the government is doing. We aim to
+bring transparency to every level of government in Canada: federal, provincial, municipal and school boards, public bodies, everyone.
+
+## Wrapping your head around what governments do
+
+It is challenging to evaluate what a government even does from the outside. Where do you even start?
+
+Governments are huge and unwieldly creatures that even their leaders (the politicians) have a hard time getting a handle on things. Politicians have come up with systems to better guide what the public service does. The biggest way they do this is by establishing programs which have goals, constraints and funding attached to them. Some of these programs are statutory (they've written a law saying thou must spend this money. Think Old Age Security, or the Canada Child Benefit; no senior or family is hanging in the balance every year because politicians haven't approved the funding for it). There are also "voted" spending allocations which happen twice a year in the federal estimates. This funding 
+
+Governments then go and create documentation about the effectiveness of these programs. 
+
+Follow the money.
+
+
+If  allocated money, and that money is getting spent (not the same thing!), then the government is prioritizing that, otherwise it is prioritizing something else. 
 
 ## Ambition
-
-Canada Spends aims to be the easiest way for Canadians to understand how their government spends their money.
-A government cannot be held accountable if people don't understand what the government is doing. We aim to
-bring transparency to every level of government in Canada: federal, provincial, municipal and school boards.
 
 We bring this transparency in two ways:
 
@@ -12,9 +26,12 @@ We bring this transparency in two ways:
    understand how their government spends their money and how it changes over time.
 2. We aggregate and normalize government spending databases to make the data fast to search and accessible.
 
-### Roadmap
+## Roadmap
+### Audited Financial Statements 
 
-By the end of 2025, we aim to have automated data ingestion pipelines for every province and territory and the largest 20 municipalities in Canada. See [Issues](https://github.com/BuildCanada/CanadaSpends/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Public%20Accounts%22) for target provinces and cities.
+- [ ] Automatically extract statements of operations and accumulated surplus from PDFs as JSON
+- [ ] Create sankey diagrams from each of those statements. 
+- [ ] Collect all audited financial statements from Canadian institutions. 
 
 ## Getting Started
 
