@@ -1,7 +1,7 @@
 {
-  "total": 4.801922,
-  "spending": 3.819822,
-  "revenue": 4.801922,
+  "total": 5.335634,
+  "spending": 4.353534,
+  "revenue": 5.335634,
   "spending_data": {
     "name": "Spending",
     "children": [
@@ -116,6 +116,19 @@
             "amount": 0.00425
           }
         ]
+      },
+      {
+        "name": "Transfers to Partners",
+        "children": [
+          {
+            "name": "Transfers → Province (Education Tax)",
+            "amount": 0.52912
+          },
+          {
+            "name": "Transfers → Business Improvement Areas",
+            "amount": 0.004592
+          }
+        ]
       }
     ]
   },
@@ -123,39 +136,31 @@
     "name": "Revenue",
     "children": [
       {
-        "name": "Net taxes available for municipal purposes",
+        "name": "Taxes Collected for Municipal & Provincial Purposes",
         "children": [
           {
-            "name": "Net taxes available for municipal purposes → Property taxes",
+            "name": "Taxes Collected → Property taxes",
             "amount": 2.61634
           },
           {
-            "name": "Net taxes available for municipal purposes → Community revitalization levy (CRL)",
+            "name": "Taxes Collected → Community revitalization levy (CRL)",
             "amount": 0.040729
           },
           {
-            "name": "Net taxes available for municipal purposes → Revenue in lieu of taxes",
+            "name": "Taxes Collected → Revenue in lieu of taxes",
             "amount": 0.02571
           },
           {
-            "name": "Net taxes available for municipal purposes → Special tax - alley lighting",
+            "name": "Taxes Collected → Special tax - alley lighting",
             "amount": 0.000897
           },
           {
-            "name": "Net taxes available for municipal purposes → Tax appeals and allowances",
+            "name": "Taxes Collected → Tax appeals and allowances",
             "amount": -0.026549
           },
           {
-            "name": "Net taxes available for municipal purposes → Other",
+            "name": "Taxes Collected → Other",
             "amount": 0.013473
-          },
-          {
-            "name": "Net taxes available for municipal purposes → Less taxes on behalf of Education",
-            "amount": -0.52912
-          },
-          {
-            "name": "Net taxes available for municipal purposes → Less taxes on behalf of Business improvement area and other",
-            "amount": -0.004592
           }
         ]
       },
@@ -177,7 +182,16 @@
       },
       {
         "name": "Government transfers - operating",
-        "amount": 0.165793
+        "children": [
+          {
+            "name": "Government transfers - operating → Federal",
+            "amount": 0.060082
+          },
+          {
+            "name": "Government transfers - operating → Provincial",
+            "amount": 0.105711
+          }
+        ]
       },
       {
         "name": "Licences and permits",
@@ -196,7 +210,16 @@
         "children": [
           {
             "name": "Other → Government transfers - capital",
-            "amount": 0.701483
+            "children": [
+              {
+                "name": "Other → Government transfers - capital → Federal",
+                "amount": 0.290385
+              },
+              {
+                "name": "Other → Government transfers - capital → Provincial",
+                "amount": 0.411098
+              }
+            ]
           },
           {
             "name": "Other → Contributed tangible capital assets",
