@@ -121,11 +121,11 @@
         "name": "Transfers to Partners",
         "children": [
           {
-            "name": "Transfers → Province (Education Tax)",
+            "name": "Transfers → Transferred to the Provincial Government (Education Tax)",
             "amount": 0.52912
           },
           {
-            "name": "Transfers → Business Improvement Areas",
+            "name": "Transfers → Transferred to Local Business Boards (Business Improvement Areas)",
             "amount": 0.004592
           }
         ]
