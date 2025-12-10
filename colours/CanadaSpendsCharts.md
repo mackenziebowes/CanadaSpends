@@ -201,31 +201,31 @@ To that end, this document outlines various colour systems similar to the main B
 ## Steel / Cool Neutrals
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; margin-bottom: 20px;">
-    <div style="width: 80px; height: 80px; background-color: #f7f8f7; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">sirocco-50<br/>#f7f8f7</div>
-    <div style="width: 80px; height: 80px; background-color: #f1f2f1; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">sirocco-100<br/>#f1f2f1</div>
-    <div style="width: 80px; height: 80px; background-color: #e4e6e6; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">sirocco-200<br/>#e4e6e6</div>
-    <div style="width: 80px; height: 80px; background-color: #ced3d2; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">sirocco-300<br/>#ced3d2</div>
-    <div style="width: 80px; height: 80px; background-color: #afb7b6; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">sirocco-400<br/>#afb7b6</div>
-    <div style="width: 80px; height: 80px; background-color: #959f9d; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">sirocco-500<br/>#959f9d</div>
-    <div style="width: 80px; height: 80px; background-color: #7a8483; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">sirocco-600<br/>#7a8483</div>
-    <div style="width: 80px; height: 80px; background-color: #66706f; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">sirocco-700<br/>#66706f</div>
-    <div style="width: 80px; height: 80px; background-color: #565e5e; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">sirocco-800<br/>#565e5e</div>
-    <div style="width: 80px; height: 80px; background-color: #4b5050; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">sirocco-900<br/>#4b5050</div>
-    <div style="width: 80px; height: 80px; background-color: #292e2e; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">sirocco-950<br/>#292e2e</div>
+    <div style="width: 80px; height: 80px; background-color: #f7f8f7; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">steel-50<br/>#f7f8f7</div>
+    <div style="width: 80px; height: 80px; background-color: #f1f2f1; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">steel-100<br/>#f1f2f1</div>
+    <div style="width: 80px; height: 80px; background-color: #e4e6e6; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">steel-200<br/>#e4e6e6</div>
+    <div style="width: 80px; height: 80px; background-color: #ced3d2; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">steel-300<br/>#ced3d2</div>
+    <div style="width: 80px; height: 80px; background-color: #afb7b6; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">steel-400<br/>#afb7b6</div>
+    <div style="width: 80px; height: 80px; background-color: #959f9d; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #333;">steel-500<br/>#959f9d</div>
+    <div style="width: 80px; height: 80px; background-color: #7a8483; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">steel-600<br/>#7a8483</div>
+    <div style="width: 80px; height: 80px; background-color: #66706f; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">steel-700<br/>#66706f</div>
+    <div style="width: 80px; height: 80px; background-color: #565e5e; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">steel-800<br/>#565e5e</div>
+    <div style="width: 80px; height: 80px; background-color: #4b5050; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">steel-900<br/>#4b5050</div>
+    <div style="width: 80px; height: 80px; background-color: #292e2e; border: 1px solid #ccc; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.7em; text-align: center; color: #eee;">steel-950<br/>#292e2e</div>
 </div>
 
 ```css Tailwind v4 plugin
 @theme {
-    --color-sirocco-50: #f7f8f7;
-    --color-sirocco-100: #f1f2f1;
-    --color-sirocco-200: #e4e6e6;
-    --color-sirocco-300: #ced3d2;
-    --color-sirocco-400: #afb7b6;
-    --color-sirocco-500: #959f9d;
-    --color-sirocco-600: #7a8483;
-    --color-sirocco-700: #66706f;
-    --color-sirocco-800: #565e5e;
-    --color-sirocco-900: #4b5050;
-    --color-sirocco-950: #292e2e;
+    --color-steel-50: #f7f8f7;
+    --color-steel-100: #f1f2f1;
+    --color-steel-200: #e4e6e6;
+    --color-steel-300: #ced3d2;
+    --color-steel-400: #afb7b6;
+    --color-steel-500: #959f9d;
+    --color-steel-600: #7a8483;
+    --color-steel-700: #66706f;
+    --color-steel-800: #565e5e;
+    --color-steel-900: #4b5050;
+    --color-steel-950: #292e2e;
 }
 ```
