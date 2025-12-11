@@ -10,38 +10,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        // Build Canada Brand Colors
-        linen: "#F6ECE3",
-        charcoal: "#272727",
-        auburn: {
-          DEFAULT: "#932F2F",
-          dark: "#471717",
-          burgundy: "#771e1e",
-        },
-        // Utility Colors
-        pine: {
-          50: "#f2f7f3",
-          100: "#dfece0",
-          200: "#c0dac3",
-          300: "#86b58f",
-          400: "#699e75",
-          500: "#488157",
-          600: "#356643",
-          700: "#2a5236",
-          800: "#24412d",
-          900: "#1e3626",
-          950: "#101e15",
-        },
-        stone: "#A8A19B",
-        teal: {
-          DEFAULT: "#38a0b4",
-          dark: "#19464F",
-        },
-        background: {
-          light: "#fafafa",
-        },
-      },
       keyframes: {
         hide: {
           from: { opacity: "1" },

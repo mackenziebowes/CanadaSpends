@@ -27,14 +27,41 @@
 }
 
 :root {
-  --background: #f6ebe3;
-  --foreground: #272727;
+  /* Build Canada Brand Colors */
+  --linen: #f6ece3;
+  --charcoal: #272727;
+  --auburn: #932f2f;
+  --auburn-dark: #471717;
+  --auburn-burgundy: #771e1e;
+
+  /* Utility Colors */
+  --stone: #a8a19b;
+  --teal: #38a0b4;
+  --teal-dark: #19464f;
+  --background-light: #fafafa;
+
+  --background: var(--linen);
+  --foreground: var(--charcoal);
   --font-sans: "Financier Text", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Söhne Kraftig", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Founder's Grotesk Mono", ui-monospace, monospace;
 }
 
 @theme inline {
+  /* Build Canada Brand Colors */
+  --color-linen: var(--linen);
+  --color-charcoal: var(--charcoal);
+  --color-auburn: var(--auburn);
+  --color-auburn-dark: var(--auburn-dark);
+  --color-auburn-burgundy: var(--auburn-burgundy);
+
+  /* Utility Colors */
+  --color-stone: var(--stone);
+  --color-teal: var(--teal);
+  --color-teal-dark: var(--teal-dark);
+  --color-background-light: var(--background-light);
+
+  /* System Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -66,6 +93,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
+  /* Pine Palette */
   --color-pine-50: #f2f7f3;
   --color-pine-100: #dfece0;
   --color-pine-200: #c0dac3;
@@ -77,9 +106,13 @@
   --color-pine-800: #24412d;
   --color-pine-900: #1e3626;
   --color-pine-950: #101e15;
+
+  /* Fonts */
   --font-family-sans: var(--font-sans);
   --font-family-display: var(--font-display);
   --font-family-mono: var(--font-mono);
+
+  /* Border Radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
