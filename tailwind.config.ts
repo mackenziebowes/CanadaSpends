@@ -11,6 +11,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Build Canada Brand Colors
+        linen: "#F6ECE3",
+        charcoal: "#272727",
+        auburn: {
+          DEFAULT: "#932F2F",
+          dark: "#471717",
+          burgundy: "#771e1e",
+        },
+        // Utility Colors
         pine: {
           50: "#f2f7f3",
           100: "#dfece0",
@@ -23,6 +32,14 @@ const config: Config = {
           800: "#24412d",
           900: "#1e3626",
           950: "#101e15",
+        },
+        stone: "#A8A19B",
+        teal: {
+          DEFAULT: "#38a0b4",
+          dark: "#19464F",
+        },
+        background: {
+          light: "#fafafa",
         },
       },
       keyframes: {

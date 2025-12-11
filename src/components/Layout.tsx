@@ -64,7 +64,7 @@ export const H3 = ({
   className?: string;
 }) => (
   <h3
-    className={`text-xl text-[#272727] font-bold mb-6 font-display ${className}`}
+    className={`text-xl text-charcoal font-bold mb-6 font-display ${className}`}
   >
     {children}
   </h3>
@@ -85,7 +85,7 @@ export const P = ({
   children: React.ReactNode;
   className?: string;
 }) => (
-  <p className={`text-[#272727] leading-relaxed mb-4 ${className}`}>
+  <p className={`text-charcoal leading-relaxed mb-4 ${className}`}>
     {children}
   </p>
 );
@@ -98,7 +98,7 @@ export const UL = ({
   className?: string;
 }) => (
   <ul
-    className={`text-[#272727] leading-relaxed mb-4 list-disc list-inside ${className}`}
+    className={`text-charcoal leading-relaxed mb-4 list-disc list-inside ${className}`}
   >
     {children}
   </ul>
@@ -113,7 +113,7 @@ export const Intro = ({
 }) => <P className={`mt-4 text-lg ${className}`}>{children}</P>;
 
 export const Page = ({ children }: { children: React.ReactNode }) => (
-  <div className="min-h-screen bg-[#f6ebe3]">{children}</div>
+  <div className="min-h-screen bg-linen">{children}</div>
 );
 
 export const PageContent = ({
@@ -141,7 +141,7 @@ export const ExternalLink = ({
 }) => (
   <a
     href={href}
-    className={`text-[#38a0b4] underline hover:text-[#19464F] ${className}`}
+    className={`text-teal underline hover:text-teal-dark ${className}`}
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -166,7 +166,7 @@ export const InternalLink = ({
   return (
     <Link
       href={localizedHref}
-      className={`text-[#38a0b4] underline hover:text-[#19464F] ${className}`}
+      className={`text-teal underline hover:text-teal-dark ${className}`}
     >
       {children}
     </Link>
