@@ -18,11 +18,15 @@
           nodejs_20
           typescript
           typescript-language-server
+          rustup
+          cargo
         ];
 
         # Optional: Runs when you enter the shell
         shellHook = ''
-          echo "Environment loaded: Node, TS, and LSP are ready!"
+          export PATH="$HOME/.cargo/bin:$PATH"
+          rustup-init -y
+          echo "Environment loaded: Node, TS, LSP, and Rust are ready!"
         '';
       };
     };

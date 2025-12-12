@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../../styles/main.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -148,7 +149,7 @@
   --sidebar-ring: oklch(0.62 0.08 200);
 }
 
-.dark {
+/* .dark {
   --background: oklch(0.09 0 0);
   --foreground: oklch(0.94 0.02 60);
   --card: oklch(0.17 0 0);
@@ -180,7 +181,7 @@
   --sidebar-accent-foreground: oklch(0.94 0.02 60);
   --sidebar-border: oklch(0.17 0 0);
   --sidebar-ring: oklch(0.62 0.08 200);
-}
+} */
 
 @layer base {
   * {
