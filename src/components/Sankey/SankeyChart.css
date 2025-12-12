@@ -15,19 +15,20 @@
 
   --block-inner-padding: 16px;
   --block-outer-padding: 16px;
-  --color-text-base: #ffffff;
-  --color-neg-hover: #2763a4;
-  --color-neg-highlight: #00347b;
-  --color-neg-active: #299ed9;
-  --color-neg-text-active: #ffffff;
-  --color-neg-base: #9bc6ed;
-  --color-neg-text-base: #66c4ef;
-  --color-short-text: #ffffff;
-  --color-difference: #d9dada;
-  --color-difference-text: #ffffff;
-  --color-background: #202122;
-  --color-secondary-active: #fffde9;
-  --color-primary-active: #fff392;
+  --color-text-base: #f6ebe3;
+  --color-neg-hover: #19464f;
+  --color-neg-highlight: #19464f;
+  --color-neg-active: #38a0b4;
+  --color-neg-text-active: #f6ebe3;
+  --color-neg-text-base: #38a0b4;
+  --color-short-text: #f6ebe3;
+  --color-difference: #a8a19b;
+  --color-difference-text: #f6ebe3;
+  --color-background: #272727;
+  --color-secondary-active: #932f2f;
+  --color-primary-active: #471717;
+  --color-revenue-secondary-active: #38a0b4;
+  --color-revenue-primary-active: #19464f;
 }
 
 #revenue-chart-root {
@@ -244,6 +245,10 @@
     background-color: var(--color-secondary-active) !important;
   }
 
+  #revenue-chart-root .block.highlight {
+    background-color: var(--color-revenue-secondary-active) !important;
+  }
+
   .block.negative {
     background-image: linear-gradient(
       135deg,
@@ -271,14 +276,26 @@
     fill: var(--color-secondary-active) !important;
   }
 
+  #revenue-chart-root .link.highlight {
+    fill: var(--color-revenue-secondary-active) !important;
+  }
+
   .highlight-link {
     fill: var(--color-primary-active) !important;
     stroke: none;
   }
 
+  #revenue-chart-root .highlight-link {
+    fill: var(--color-revenue-primary-active) !important;
+  }
+
   .highlight-box {
     fill: var(--color-primary-active) !important;
     stroke: none;
+  }
+
+  #revenue-chart-root .highlight-box {
+    fill: var(--color-revenue-primary-active) !important;
   }
 
   .column.narrow .block {
@@ -331,6 +348,10 @@
 
   .block.current-node {
     background-color: var(--color-primary-active) !important;
+  }
+
+  #revenue-chart-root .block.current-node {
+    background-color: var(--color-revenue-primary-active) !important;
   }
 
   .label .label-amount {
