@@ -49,7 +49,7 @@ function RecruitmentBannerContent() {
   if (!isVisible) return null;
 
   return (
-    <div className="sticky top-0 z-[110] relative w-full bg-auburn text-white py-3 px-4 text-center">
+    <div className="sticky top-0 z-[110] relative w-full bg-auburn text-background py-3 px-4 text-center">
       {/* Invisible button in top left to disable */}
       <button
         onClick={handleDisable}
@@ -63,7 +63,7 @@ function RecruitmentBannerContent() {
           href="https://buildcanada.com/discord"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:text-gray-200"
+          className="underline hover:text-muted"
         >
           buildcanada.com/get-involved
         </a>
